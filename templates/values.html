@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- Page Banner -->
+    <section class="page-banner" style="background: linear-gradient(135deg, rgba(183, 28, 28, 0.85), rgba(244, 180, 0, 0.8)), url('{{ url_for('static', filename='images/school/campus_karyalay.png') }}') center/cover no-repeat; padding-top: 180px; padding-bottom: 80px; margin-top: -90px;">
+        <div class="container">
+            <h1 style="color: white; font-size: 3.5rem; margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3);">हमारे मूल्य</h1>
+            <p style="color: var(--cream); font-size: 1.3rem; font-weight: 600;">भारतीय संस्कृति, अनुशासन और आधुनिक ज्ञान का संगम</p>
+        </div>
+    </section>
+
+    <!-- Core Values Description Section -->
+    <section style="padding: 80px 5%; background: var(--white);">
+        <div class="container">
+            <div style="text-align: center; max-width: 900px; margin: 0 auto 60px auto;">
+                <h2 style="color: var(--primary); font-size: 2.8rem; margin-bottom: 20px;">विद्यालय के आधारभूत सिद्धांत</h2>
+                <p style="font-size: 1.15rem; color: #555; line-height: 1.8;">
+                    आचार्य रघुवीर इण्टर कॉलेज में हमारा मानना है कि शिक्षा का वास्तविक उद्देश्य केवल साक्षरता नहीं, बल्कि एक ऐसे चरित्र का निर्माण है जो स्वयं, समाज और राष्ट्र के लिए उपयोगी हो। हमारे ये छः प्रमुख मूल्य हमारे हर कार्य और विचार का मार्गदर्शन करते हैं।
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                
+                <!-- Value 1 -->
+                <div class="card" style="text-align: center; padding: 40px 30px; border-radius: 15px; border-bottom: 5px solid var(--primary); background: var(--cream);">
+                    <i class="fas fa-praying-hands" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h3 style="color: var(--dark); font-size: 1.5rem; margin-bottom: 15px;">संस्कार (Culture)</h3>
+                    <p style="color: #666; font-size: 1.05rem;">हम अपनी सनातन संस्कृति और वैदिक परंपराओं का आदर करते हैं तथा उन्हें दैनिक जीवन में उतारने के लिए विद्यार्थियों को प्रेरित करते हैं।</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="card" style="text-align: center; padding: 40px 30px; border-radius: 15px; border-bottom: 5px solid var(--secondary); background: var(--cream);">
+                    <i class="fas fa-flag" style="font-size: 3.5rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                    <h3 style="color: var(--dark); font-size: 1.5rem; margin-bottom: 15px;">राष्ट्रभक्ति (Patriotism)</h3>
+                    <p style="color: #666; font-size: 1.05rem;">राष्ट्र सर्वोपरि! हमारे विद्यार्थियों में देश प्रेम, राष्ट्रीय गौरव और देश के विकास में योगदान देने की अडिग भावना कूट-कूट कर भरी जाती है।</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="card" style="text-align: center; padding: 40px 30px; border-radius: 15px; border-bottom: 5px solid var(--accent); background: var(--cream);">
+                    <i class="fas fa-user-shield" style="font-size: 3.5rem; color: var(--accent); margin-bottom: 20px;"></i>
+                    <h3 style="color: var(--dark); font-size: 1.5rem; margin-bottom: 15px;">अनुशासन (Discipline)</h3>
+                    <p style="color: #666; font-size: 1.05rem;">अनुशासन ही सफलता की कुंजी है। हम विद्यार्थियों को आत्म-अनुशासन, समय प्रबंधन और नियमों के पालन का महत्व सिखाते हैं।</p>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="card" style="text-align: center; padding: 40px 30px; border-radius: 15px; border-bottom: 5px solid var(--gold); background: var(--cream);">
+                    <i class="fas fa-hand-holding-heart" style="font-size: 3.5rem; color: var(--gold); margin-bottom: 20px;"></i>
+                    <h3 style="color: var(--dark); font-size: 1.5rem; margin-bottom: 15px;">सत्य निष्ठा (Integrity)</h3>
+                    <p style="color: #666; font-size: 1.05rem;">सत्य और ईमानदारी हमारे आचरण का अभिन्न अंग है। हम छात्रों को हर परिस्थिति में सही मार्ग चुनने का साहस प्रदान करते हैं।</p>
+                </div>
+
+                <!-- Value 5 -->
+                <div class="card" style="text-align: center; padding: 40px 30px; border-radius: 15px; border-bottom: 5px solid var(--primary); background: var(--cream);">
+                    <i class="fas fa-hands-helping" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h3 style="color: var(--dark); font-size: 1.5rem; margin-bottom: 15px;">सेवा भाव (Service)</h3>
+                    <p style="color: #666; font-size: 1.05rem;">परोपकार सबसे बड़ा धर्म है। समाज के कमजोर और जरूरतमंद वर्गों की निस्वार्थ सेवा करना हम अपना नैतिक कर्तव्य मानते हैं।</p>
+                </div>
+
+                <!-- Value 6 -->
+                <div class="card" style="text-align: center; padding: 40px 30px; border-radius: 15px; border-bottom: 5px solid var(--secondary); background: var(--cream);">
+                    <i class="fas fa-medal" style="font-size: 3.5rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                    <h3 style="color: var(--dark); font-size: 1.5rem; margin-bottom: 15px;">उत्कृष्टता (Excellence)</h3>
+                    <p style="color: #666; font-size: 1.05rem;">हम शैक्षणिक और सह-शैक्षणिक हर क्षेत्र में अपना सर्वश्रेष्ठ प्रदर्शन करने और निरंतर सुधार के लिए कटिबद्ध हैं।</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

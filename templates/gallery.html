@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Gallery Banner -->
+<section class="gallery-page-banner">
+    <div class="container">
+        <h1>विद्यालय गैलरी</h1>
+        <p style="color: var(--gold); font-size: 1.3rem;">हमारी सुखद स्मृतियाँ एवं महत्वपूर्ण उपलब्धियाँ</p>
+    </div>
+</section>
+
+<section class="gallery-page-wrapper">
+    <div class="container">
+        
+        <!-- Filter Buttons -->
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">सभी तस्वीरें</button>
+            <button class="filter-btn" data-filter="campus">विद्यालय परिसर</button>
+            <button class="filter-btn" data-filter="events">कार्यक्रम</button>
+            <button class="filter-btn" data-filter="awards">उपलब्धियाँ</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-interactive-grid">
+            
+            <!-- Item 1 (Campus) -->
+            <div class="gallery-card" data-category="campus" onclick="openLightbox(this)">
+                <img src="{{ url_for('static', filename='images/school/campus4.png') }}" alt="Campus">
+                <div class="gallery-overlay">
+                    <i class="fas fa-school"></i>
+                    <h3>विद्यालय परिसर</h3>
+                </div>
+            </div>
+
+            <!-- Item 2 (Campus) -->
+            <div class="gallery-card" data-category="campus" onclick="openLightbox(this)">
+                <img src="{{ url_for('static', filename='images/school/campus5.png') }}" alt="Campus">
+                <div class="gallery-overlay">
+                    <i class="fas fa-building"></i>
+                    <h3>मुख्य भवन</h3>
+                </div>
+            </div>
+
+            <!-- Item 3 (Campus) -->
+            <div class="gallery-card" data-category="campus" onclick="openLightbox(this)">
+                <img src="{{ url_for('static', filename='images/school/campus_coridor.png') }}" alt="Corridor">
+                <div class="gallery-overlay">
+                    <i class="fas fa-archway"></i>
+                    <h3>कॉरिडोर</h3>
+                </div>
+            </div>
+
+            <!-- Item 4 (Events) -->
+            <div class="gallery-card" data-category="events" onclick="openLightbox(this)">
+                <img src="{{ url_for('static', filename='images/school/statue12.png') }}" alt="Statue">
+                <div class="gallery-overlay">
+                    <i class="fas fa-monument"></i>
+                    <h3>आचार्य जी की प्रतिमा</h3>
+                </div>
+            </div>
+
+            <!-- Item 5 (Events) -->
+            <div class="gallery-card" data-category="events" onclick="openLightbox(this)">
+                <img src="{{ url_for('static', filename='images/school/statue2.png') }}" alt="Statue 2">
+                <div class="gallery-overlay">
+                    <i class="fas fa-leaf"></i>
+                    <h3>सांस्कृतिक धरोहर</h3>
+                </div>
+            </div>
+            
+            <!-- Item 6 (Campus) -->
+            <div class="gallery-card" data-category="campus" onclick="openLightbox(this)">
+                <img src="{{ url_for('static', filename='images/school/campus_karyalay.png') }}" alt="Office">
+                <div class="gallery-overlay">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>कार्यालय</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div id="lightbox-caption"></div>
+</div>
+
+<!-- Gallery JavaScript -->
+<script>
+    // Lightbox Functionality
+    function openLightbox(element) {
+        const img = element.querySelector('img');
+        const title = element.querySelector('h3').innerText;
+        document.getElementById('lightbox').style.display = 'flex';
+        document.getElementById('lightbox-img').src = img.src;
+        document.getElementById('lightbox-caption').innerText = title;
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+
+    // Category Filter Functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryCards = document.querySelectorAll('.gallery-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filterValue = btn.getAttribute('data-filter');
+            galleryCards.forEach(card => {
+                card.style.display = (filterValue === 'all' || card.getAttribute('data-category') === filterValue) ? 'block' : 'none';
+            });
+        });
+    });
+</script>
+{% endblock %}

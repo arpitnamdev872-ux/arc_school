@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Page Banner -->
+<section class="page-banner" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;">
+    <div class="container">
+        <h1 style="color: white;">नवीनतम सूचनाएँ</h1>
+        <p style="color: var(--gold); font-size: 1.3rem;">विद्यालय की महत्वपूर्ण घोषणाएँ एवं अपडेट</p>
+    </div>
+</section>
+
+<section class="news-page-section">
+    <div class="container">
+        {% if notices %}
+        <div class="news-page-grid">
+            {% for item in notices %}
+            <div class="news-page-card">
+                <div class="news-img">
+                    <img src="{{ item.image }}" alt="{{ item.title }}">
+                </div>
+                <div class="news-content">
+                    <h3><span class="notice-icon">{{ item.icon }}</span> {{ item.title }}</h3>
+                    <p>{{ item.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="no-news-box">
+            <h3>कोई सूचना उपलब्ध नहीं है</h3>
+            <p>नवीनतम जानकारी के लिए कृपया बाद में देखें।</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}

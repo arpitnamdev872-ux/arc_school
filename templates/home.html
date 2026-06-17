@@ -1,0 +1,628 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section id="hero">
+    
+    <!-- Dynamic Background Slider -->
+    <div class="hero-slider">
+        <div class="slide" style="background-image: url('{{ url_for('static', filename='images/school/campus4.png') }}');"></div>
+        <div class="slide" style="background-image: url('{{ url_for('static', filename='images/school/campus5.png') }}');"></div>
+        <div class="slide" style="background-image: url('{{ url_for('static', filename='images/school/campus_coridor.png') }}');"></div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <img src="{{ url_for('static', filename='images/school/logo7.PNG') }}"
+             alt="विद्यालय लोगो"
+             class="hero-logo">
+
+        <h1>
+            आचार्य रघुवीर इण्टर कॉलेज
+        </h1>
+
+        <h2>
+            वयं राष्ट्रे जागृयाम
+        </h2>
+
+        <p>
+            वैदिक संस्कार, आधुनिक शिक्षा और उज्ज्वल भविष्य
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/admission">
+                प्रवेश प्रक्रिया
+            </a>
+
+            <a href="/about">
+                विद्यालय परिचय
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LATEST NEWS TICKER -->
+<div class="news-ticker">
+    <div class="ticker-title">
+        <i class="fas fa-broadcast-tower"></i> लाइव अपडेट
+    </div>
+    <div class="ticker-content">
+        <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();" scrollamount="6">
+            {% for item in notices %}
+                <span class="ticker-item"><i class="fas fa-bullhorn"></i> {{ item.title }}</span>
+            {% endfor %}
+        </marquee>
+    </div>
+</div>
+
+<!-- NOTICE BOARD & UPCOMING EVENTS -->
+<section id="updates" style="padding-top: 50px;">
+    <div class="container">
+        <div class="updates-wrapper">
+            
+            <!-- Notice Board -->
+            <div class="notice-board">
+                <div class="board-header">
+                    <h2>📢 सूचना पट्ट (Notice Board)</h2>
+                </div>
+                <div class="board-body">
+                    <marquee behavior="scroll" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();" class="vertical-marquee">
+                        
+                        <div class="notice-item">
+                            <h4><span class="notice-icon">📚</span> सत्र 2026-27 हेतु प्रवेश प्रारम्भ</h4>
+                            <p>कक्षा 6 से 12 तक प्रवेश प्रक्रिया जारी है। सीमित सीटों के लिए शीघ्र संपर्क करें।</p>
+                        </div>
+
+                        <div class="notice-item">
+                            <h4><span class="notice-icon">📝</span> नियमित उपस्थिति अनिवार्य</h4>
+                            <p>सभी विद्यार्थियों से विद्यालय में नियमित उपस्थिति एवं अनुशासन बनाए रखने का अनुरोध है।</p>
+                        </div>
+
+                        <div class="notice-item">
+                            <h4><span class="notice-icon">💻</span> स्मार्ट क्लास एवं कंप्यूटर शिक्षा</h4>
+                            <p>आधुनिक तकनीक आधारित शिक्षण व्यवस्था द्वारा विद्यार्थियों को गुणवत्तापूर्ण शिक्षा प्रदान की जा रही है।</p>
+                        </div>
+
+                        <div class="notice-item">
+                            <h4><span class="notice-icon">🏆</span> खेलकूद एवं सह-पाठ्यक्रम गतिविधियाँ</h4>
+                            <p>विद्यार्थियों के सर्वांगीण विकास हेतु विभिन्न खेलकूद एवं सांस्कृतिक कार्यक्रम आयोजित किए जाते हैं।</p>
+                        </div>
+
+                        <div class="notice-item">
+                            <h4><span class="notice-icon">🎯</span> करियर मार्गदर्शन एवं परामर्श</h4>
+                            <p>वरिष्ठ विद्यार्थियों के लिए विशेषज्ञ शिक्षकों द्वारा करियर काउंसलिंग एवं मार्गदर्शन उपलब्ध है।</p>
+                        </div>
+
+                        <div class="notice-item">
+                            <h4><span class="notice-icon">📖</span> मासिक परीक्षा सूचना</h4>
+                            <p>आगामी मासिक परीक्षा की तिथि एवं समय-सारणी शीघ्र घोषित की जाएगी।</p>
+                        </div>
+
+                        <div class="notice-item">
+                            <h4><span class="notice-icon">🌿</span> स्वच्छ परिसर, स्वस्थ वातावरण</h4>
+                            <p>विद्यालय परिसर को स्वच्छ एवं हरित बनाए रखने में अपना सहयोग प्रदान करें।</p>
+                        </div>
+
+                        <div class="notice-item">
+                            <h4><span class="notice-icon">📞</span> सम्पर्क एवं सहायता</h4>
+                            <p>किसी भी जानकारी हेतु विद्यालय कार्यालय से कार्य दिवसों में संपर्क करें।</p>
+                        </div>
+
+                    </marquee>
+                </div>
+                <div class="board-footer">
+                    <a href="/news">सभी समाचार देखें <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div class="upcoming-events-board">
+                <div class="board-header">
+                    <h2><i class="fas fa-calendar-alt"></i> आगामी कार्यक्रम</h2>
+                </div>
+                <div class="events-list">
+                    <!-- EVENT 1 -->
+                    <div class="event-list-item">
+                        <div class="event-date-box">
+                            <span class="date">21</span>
+                            <span class="month">जून</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>अंतर्राष्ट्रीय योग दिवस <span class="blink-badge">शीघ्र</span></h3>
+                            <p>विद्यालय परिसर में सामूहिक योग का भव्य आयोजन।</p>
+                        </div>
+                    </div>
+                    <!-- EVENT 2 -->
+                    <div class="event-list-item">
+                        <div class="event-date-box">
+                            <span class="date">05</span>
+                            <span class="month">जुलाई</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>वृक्षारोपण अभियान</h3>
+                            <p>पर्यावरण संरक्षण हेतु विशेष जागरूकता अभियान।</p>
+                        </div>
+                    </div>
+                    <!-- EVENT 3 -->
+                    <div class="event-list-item">
+                        <div class="event-date-box">
+                            <span class="date">15</span>
+                            <span class="month">अगस्त</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>स्वतंत्रता दिवस समारोह</h3>
+                            <p>विद्यालय में ध्वजारोहण एवं रंगारंग सांस्कृतिक कार्यक्रम।</p>
+                        </div>
+                    </div>
+                    <!-- EVENT 4 -->
+                    <div class="event-list-item">
+                        <div class="event-date-box">
+                            <span class="date">20</span>
+                            <span class="month">अगस्त</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>विज्ञान प्रदर्शनी</h3>
+                            <p>विद्यार्थियों के विज्ञान मॉडल एवं नवाचार का प्रदर्शन।</p>
+                        </div>
+                    </div>
+                    <!-- EVENT 5 -->
+                    <div class="event-list-item">
+                        <div class="event-date-box">
+                            <span class="date">05</span>
+                            <span class="month">सितंबर</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>शिक्षक दिवस</h3>
+                            <p>छात्रों द्वारा शिक्षकों के सम्मान में विशेष आयोजन।</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="board-footer">
+                    <a href="/events">सभी कार्यक्रम देखें <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about-acharya">
+
+    <div class="container">
+
+        <div class="acharya-section">
+
+                <div class="acharya-image-wrapper">
+                    <img src="{{ url_for('static', filename='images/school/statue2.png') }}"
+                    alt="आचार्य रघुवीर जी" class="acharya-image">
+                </div>
+
+                <div class="acharya-content">
+                    <h2>आचार्य रघुवीर जी</h2>
+                    <p class="acharya-dates"><i class="fas fa-calendar-alt"></i> <strong>30 दिसम्बर 1902 - 14 मई 1963</strong></p>
+                    
+                    <p>भारतीय धरोहर के मनीषी आचार्य रघुवीर। महामनीषी आचार्य रघुवीर का जन्म 30 दिसम्बर 1902 ई० को रावलपिण्डी (पाकिस्तान) में हुआ था। विद्यार्थी जीवन से ही वे सामाजिक कार्यों में सक्रिय रहे और भारतीय संस्कृति के संरक्षण हेतु जीवन समर्पित किया।</p>
+                    
+                    <p>जनवरी 1934 में उन्होंने सरस्वती विहार की स्थापना की तथा भारतीय ज्ञान पर शोध कार्य प्रारम्भ करवाया। 24 अप्रैल 1948 को उन्हें संविधान सभा का सदस्य मनोनीत किया गया। 1952 से 1962 तक वे राज्यसभा के सदस्य रहे।</p>
+                    
+                    <p>14 मई 1963 को कानपुर के रूमा ग्राम के निकट एक दुर्घटना में उनका निधन हुआ। उसी पुण्य स्मृति में आचार्य रघुवीर इण्टर कॉलेज संचालित है। आचार्य रघुवीर जी का उद्देश्य विद्यार्थियों का सर्वांगीण विकास कराना था।</p>
+
+                    <a href="/about" class="read-more" style="margin-top: 15px;">विस्तार से जानें <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATISTICS -->
+
+<section id="stats" class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            
+            <div class="stat-card">
+                <i class="fas fa-user-graduate stat-icon"></i>
+                <h3>2500+</h3>
+                <p>विद्यार्थी</p>
+            </div>
+
+            <div class="stat-card">
+                <i class="fas fa-chalkboard-teacher stat-icon"></i>
+                <h3>100+</h3>
+                <p>शिक्षक</p>
+            </div>
+
+            <div class="stat-card">
+                <i class="fas fa-history stat-icon"></i>
+                <h3>30+</h3>
+                <p>वर्षों का अनुभव</p>
+            </div>
+
+            <div class="stat-card">
+                <i class="fas fa-award stat-icon"></i>
+                <h3>95%</h3>
+                <p>उत्कृष्ट परिणाम</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ACADEMICS -->
+
+<section id="academics" style="padding: 80px 5%; background: var(--white);">
+    <div class="container">
+        <h2 style="color: var(--primary); text-align: center; margin-bottom: 50px; font-size: 2.8rem;">शैक्षणिक कार्यक्रम</h2>
+        <div class="academics-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            
+            <!-- Middle School -->
+            <div class="card" style="text-align: center; padding: 40px; border-radius: 15px; border-bottom: 5px solid var(--secondary); background: var(--cream);">
+                <i class="fas fa-school" style="font-size: 3.5rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.8rem;">पूर्व माध्यमिक</h3>
+                <p style="color: #555; font-size: 1.05rem;">कक्षा 6 से 8 तक के विद्यार्थियों के लिए आधारभूत शिक्षा, संस्कार एवं सर्वांगीण विकास पर विशेष ध्यान।</p>
+            </div>
+
+            <!-- High School -->
+            <div class="card" style="text-align: center; padding: 40px; border-radius: 15px; border-bottom: 5px solid var(--primary); background: var(--cream);">
+                <i class="fas fa-book-reader" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.8rem;">हाई स्कूल</h3>
+                <p style="color: #555; font-size: 1.05rem;">कक्षा 9 एवं 10 के विद्यार्थियों के लिए बोर्ड परीक्षा की उत्कृष्ट तैयारी एवं आधुनिक शिक्षा प्रणाली।</p>
+            </div>
+
+            <!-- Intermediate -->
+            <div class="card" style="text-align: center; padding: 40px; border-radius: 15px; border-bottom: 5px solid var(--accent); background: var(--cream);">
+                <i class="fas fa-user-graduate" style="font-size: 3.5rem; color: var(--accent); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.8rem;">इण्टरमीडिएट</h3>
+                <p style="color: #555; font-size: 1.05rem;">विज्ञान/वाणिज्य /कला वर्ग में विशेषज्ञ शिक्षकों द्वारा उच्च स्तरीय मार्गदर्शन एवं करियर काउंसलिंग।</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FACILITIES -->
+
+<section id="facilities" style="padding: 80px 5%; background: var(--cream);">
+    <div class="container">
+        <h2 style="color: var(--primary); text-align: center; margin-bottom: 50px; font-size: 2.8rem;">हमारी उत्कृष्ट सुविधाएँ</h2>
+        <div class="facility-grid">
+            
+            <div class="facility-card">
+                <div class="fac-icon" style="width: 75px; height: 75px; margin: 0 auto 20px; background: #fdf5f5; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem;"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h3 style="color: var(--dark); font-size: 1.4rem; margin-bottom: 10px;">स्मार्ट कक्षाएँ</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">डिजिटल बोर्ड और प्रोजेक्टर से सुसज्जित आधुनिक कक्षाएं।</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="fac-icon" style="width: 75px; height: 75px; margin: 0 auto 20px; background: #fff8e1; color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem;"><i class="fas fa-laptop-code"></i></div>
+                <h3 style="color: var(--dark); font-size: 1.4rem; margin-bottom: 10px;">कम्प्यूटर लैब</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">नवीनतम सॉफ्टवेयर एवं तीव्र इंटरनेट सुविधा युक्त आधुनिक कम्प्यूटर लैब।</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="fac-icon" style="width: 75px; height: 75px; margin: 0 auto 20px; background: #e8f5e9; color: #2e7d32; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem;"><i class="fas fa-flask"></i></div>
+                <h3 style="color: var(--dark); font-size: 1.4rem; margin-bottom: 10px;">विज्ञान प्रयोगशाला</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">भौतिक, रसायन और जीव विज्ञान की पूर्णतः सुसज्जित प्रायोगिक शालाएं।</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="fac-icon" style="width: 75px; height: 75px; margin: 0 auto 20px; background: #e3f2fd; color: #1565c0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem;"><i class="fas fa-book-open"></i></div>
+                <h3 style="color: var(--dark); font-size: 1.4rem; margin-bottom: 10px;">समृद्ध पुस्तकालय</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">हजारों पुस्तकों, पत्रिकाओं एवं ज्ञानवर्धक समाचार पत्रों का विशाल संग्रह।</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="fac-icon" style="width: 75px; height: 75px; margin: 0 auto 20px; background: #fff3e0; color: #e65100; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem;"><i class="fas fa-volleyball-ball"></i></div>
+                <h3 style="color: var(--dark); font-size: 1.4rem; margin-bottom: 10px;">विशाल खेल परिसर</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">शारीरिक विकास हेतु इनडोर और आउटडोर खेलों की उत्तम व्यवस्था।</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="fac-icon" style="width: 75px; height: 75px; margin: 0 auto 20px; background: #fce4ec; color: #c2185b; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem;"><i class="fas fa-video"></i></div>
+                <h3 style="color: var(--dark); font-size: 1.4rem; margin-bottom: 10px;">सीसीटीवी सुरक्षा</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">संपूर्ण विद्यालय परिसर में 24x7 सीसीटीवी कैमरे द्वारा कड़ी सुरक्षा निगरानी।</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+
+<section id="achievements" style="padding: 80px 5%; background: var(--white);">
+    <div class="container">
+        <h2 style="color: var(--primary); text-align: center; margin-bottom: 50px; font-size: 2.8rem;">हमारी उपलब्धियाँ</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            
+            <!-- Achievement 1 -->
+            <div class="achievement-card">
+                <div class="achievement-icon icon-gold"><i class="fas fa-trophy"></i></div>
+                <h3>उत्कृष्ट परीक्षा परिणाम</h3>
+                <p>विगत कई वर्षों से बोर्ड परीक्षाओं में विद्यालय का परीक्षा परिणाम शत-प्रतिशत रहा है। विद्यालय के अनेक विद्यार्थियों ने सरसौल ब्लॉक की मेरिट सूची में स्थान प्राप्त कर संस्थान का गौरव बढ़ाया है।</p>
+            </div>
+
+            <!-- Achievement 2 -->
+            <div class="achievement-card">
+                <div class="achievement-icon icon-primary"><i class="fas fa-medal"></i></div>
+                <h3>खेलकूद में पदक</h3>
+                <p>ब्लॉक एवं जिला स्तरीय खेलकूद प्रतियोगिताओं में हमारे विद्यार्थियों ने अनेक स्वर्ण एवं रजत पदक प्राप्त कर विद्यालय का गौरव बढ़ाया है।</p>
+            </div>
+
+            <!-- Achievement 3 -->
+            <div class="achievement-card">
+                <div class="achievement-icon icon-accent"><i class="fas fa-award"></i></div>
+                <h3>विज्ञान एवं नवाचार</h3>
+                <p>कॉलेज स्तरीय विज्ञान प्रदर्शनी में प्रथम स्थान प्राप्त किया। विज्ञान मॉडल के ब्लॉक स्तर पर चयनित होने पर विशेष पुरस्कार से सम्मानित किया गया।</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+
+<!-- GALLERY PREVIEW -->
+
+<section id="gallery">
+
+    <div class="container">
+
+        <h2>विद्यालय झलकियाँ</h2>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="{{ url_for('static',
+                filename='images/school/campus4.png') }}">
+            </div>
+
+            <div class="gallery-item">
+                <img src="{{ url_for('static',
+                filename='images/school/campus5.png') }}">
+            </div>
+
+            <div class="gallery-item">
+                <img src="{{ url_for('static',
+                filename='images/school/campus_coridor.png') }}">
+            </div>
+
+            <div class="gallery-item">
+                <img src="{{ url_for('static',
+                filename='images/school/campus_karyalay.png') }}">
+            </div>
+
+
+            <div class="gallery-item">
+                <img src="{{ url_for('static',
+                filename='images/school/statue12.png') }}"
+                class="gallery-statue">
+            </div>
+
+        </div>
+
+        <div class="gallery-button">
+
+            <a href="/gallery">
+                सम्पूर्ण गैलरी देखें
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PRINCIPAL -->
+
+<section id="chairman">
+
+    <div class="container">
+
+        <div class="message-card">
+
+            <div class="message-image flip-container">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <img src="{{ url_for('static', filename='images/authorities/chairman.png') }}" alt="chairman photo">
+                    </div>
+                    <div class="flip-back">
+                        <h3>श्री प्रेमचंद्र गुप्त</h3>
+                        <p>अध्यक्ष</p>
+                        <i class="fas fa-user-tie" style="font-size: 3.5rem; color: var(--gold); margin-top: 15px;"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-content">
+
+                <h2>
+                    श्री प्रेमचंद्र गुप्त (समाजसेवी एवं व्यवसायी)
+                </h2>
+
+                <p>
+                प्रिय विद्यार्थियों, अभिभावकों एवं शिक्षकों,
+                    
+                    आचार्य रघुवीर इण्टर कॉलेज परिवार की ओर से आप सभी का हार्दिक स्वागत है।
+                    
+                    शिक्षा केवल ज्ञान अर्जित करने का माध्यम नहीं, बल्कि व्यक्तित्व निर्माण, नैतिक मूल्यों के विकास एवं समाज के प्रति उत्तरदायित्व की भावना जागृत करने का सशक्त साधन है। हमारा उद्देश्य विद्यार्थियों को ऐसी गुणवत्तापूर्ण शिक्षा प्रदान करना है, जिससे वे ज्ञान, अनुशासन, आत्मविश्वास और संस्कारों से समृद्ध होकर राष्ट्र निर्माण में सार्थक योगदान दे सकें।
+                    
+                    विद्यालय में आधुनिक शिक्षण पद्धतियों के साथ-साथ भारतीय संस्कृति एवं मानवीय मूल्यों को भी समान महत्व दिया जाता है। हमें विश्वास है कि हमारे शिक्षकगण, अभिभावक एवं विद्यार्थी मिलकर उत्कृष्टता की नई ऊँचाइयों को प्राप्त करेंगे।
+                    
+                    मैं सभी विद्यार्थियों के उज्ज्वल भविष्य की कामना करता हूँ |
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="manager">
+
+    <div class="container">
+
+        <div class="message-card">
+
+            <div class="message-content">
+
+                <h2>
+                    श्री प्रशांत सूरी (प्रबंधक)
+                </h2>
+
+                <p>
+                    प्रिय अभिभावकों, विद्यार्थियों एवं शुभचिंतकों, आचार्य रघुवीर इण्टर कॉलेज के नए शैक्षणिक सत्र में आपका हार्दिक स्वागत है। हम एक और आशाजनक वर्ष में प्रवेश कर रहे हैं, हमारा ध्यान विद्यार्थियों के सर्वांगीण विकास और उन्हें तेजी से बदलती दुनिया की चुनौतियों का सामना करने के लिए केंद्रित है। शिक्षा केवल पुस्तकों तक सीमित नहीं है, बल्कि यह चरित्र निर्माण, जिज्ञासा और आत्मविश्वास विकसित करने का माध्यम भी है। हम नवाचार और प्रौद्योगिकी से प्रेरित एक गतिशील युग में प्रवेश कर रहे हैं। अपने विद्यार्थियों को उत्कृष्ट बनाने के लिए हम निरंतर अपनी शिक्षण पद्धतियों का आधुनिकीकरण कर रहे हैं तथा डिजिटल शिक्षण सुविधाओं का विस्तार कर रहे हैं। हमारा उद्देश्य प्रत्येक विद्यार्थी को समीक्षात्मक चिंतन क्षमता, वैश्विक दृष्टिकोण और उज्ज्वल भविष्य के निर्माण हेतु दृढ़ता से सुसज्जित करना है। हम अपने अभिभावकों के निरंतर विश्वास और सहयोग के लिए उनका हृदय से आभार व्यक्त करते हैं। आइए, हम सब मिलकर अपने बच्चों को बड़े सपने देखने और उत्कृष्टता प्राप्त करने के लिए प्रेरित करें।
+                </p>
+
+            </div>
+
+            <div class="message-image flip-container">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <img src="{{ url_for('static', filename='images/authorities/manager.png') }}" alt="manager photo">
+                    </div>
+                    <div class="flip-back">
+                        <h3>श्री प्रशांत सूरी</h3>
+                        <p>प्रबंधक</p>
+                        <i class="fas fa-user-tie" style="font-size: 3.5rem; color: var(--gold); margin-top: 15px;"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="principal">
+
+    <div class="container">
+
+        <div class="message-card">
+
+            <div class="message-image flip-container">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <img src="{{ url_for('static', filename='images/authorities/principal.png') }}"
+                        alt="Principal photo">
+                    </div>
+                    <div class="flip-back">
+                        <h3>श्री गिरिजेश नारायण त्रिपाठी</h3>
+                        <p>प्रधानाचार्य</p>
+                        <i class="fas fa-user-tie" style="font-size: 3.5rem; color: var(--gold); margin-top: 15px;"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-content">
+
+                <h2>
+                    श्री गिरिजेश नारायण त्रिपाठी (प्रधानाचार्य)
+                </h2>
+
+                <p>
+                    प्रिय विद्यार्थियों, अभिभावकों, शिक्षकों एवं कर्मचारियों, नवीन शैक्षणिक सत्र में आप सभी का हार्दिक स्वागत है। हमारा उद्देश्य विद्यार्थियों को सुरक्षित, प्रेरणादायक एवं ज्ञानवर्धक वातावरण प्रदान करना है, जहाँ वे शैक्षिक उत्कृष्टता के साथ-साथ रचनात्मकता, नैतिक मूल्यों और नवाचार की भावना विकसित कर सकें। बदलते समय और कृत्रिम बुद्धिमत्ता के युग में हम अनुभवात्मक एवं आधुनिक शिक्षण पद्धतियों के माध्यम से विद्यार्थियों को भविष्य की चुनौतियों के लिए तैयार करने हेतु प्रतिबद्ध हैं। हम विद्यार्थियों में आत्मविश्वास, नेतृत्व, अनुशासन, समय प्रबंधन तथा राष्ट्र के प्रति उत्तरदायित्व की भावना विकसित करने का निरंतर प्रयास करते हैं। हमारा विश्वास है कि प्रत्येक छात्र में निहित प्रतिभा को उचित मार्गदर्शन और अवसरों के माध्यम से निखारा जा सकता है। आप सभी के सहयोग से हम उत्कृष्ट शिक्षा एवं समग्र विकास के अपने लक्ष्य को और अधिक सशक्त बनाएंगे।
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- OUR EXPERT FACULTY -->
+
+<section id="faculty">
+
+    <div class="container">
+        <h2>
+            हमारे मार्गदर्शक
+        </h2>
+        <div class="faculty-scroll-container">
+            <div class="faculty-grid">
+            <!-- Original Cards -->
+            <div class="faculty-card">
+                <img src="{{ url_for('static', filename='images/authorities/staff2.png') }}" alt="शिक्षक">
+                <h3>श्री अरुण अवस्थी</h3>
+                <p>वरिष्ठ शिक्षक एवं प्रभारी</p>
+            </div>
+            <div class="faculty-card">
+                <img src="{{ url_for('static', filename='images/authorities/staff1.png') }}" alt="शिक्षक">
+                <h3>श्री सुबोध मिश्रा</h3>
+                <p>वरिष्ठ शिक्षक एवं परीक्षा प्रमुख</p>
+            </div>
+            <div class="faculty-card">
+                <img src="{{ url_for('static', filename='images/authorities/staff3.png') }}" alt="शिक्षक">
+                <h3>श्री सुशील शुक्ला</h3>
+                <p>परियोजना समन्वयक</p>
+            </div>
+            <div class="faculty-card">
+                <img src="{{ url_for('static', filename='images/authorities/staff5.png') }}" alt="शिक्षक">
+                <h3>सुश्री सपना पाण्डेय</h3>
+                <p>(शिक्षिका)</p>
+            </div>
+            <div class="faculty-card">
+                <img src="{{ url_for('static', filename='images/authorities/staff4.png') }}" alt="शिक्षक">
+                <h3>श्री अनुपम कुमार</h3>
+                <p>(शिक्षक)</p>
+            </div>
+            <div class="faculty-card">
+                <img src="{{ url_for('static', filename='images/authorities/staff6.png') }}" alt="शिक्षक">
+                <h3>श्री लालमणि बाजपेयी</h3>
+                <p>(शिक्षक)</p>
+            </div>
+
+            <!-- Duplicated Cards for seamless loop -->
+            <div class="faculty-card">
+                <img src="{{ url_for('static', filename='images/authorities/staff2.png') }}" alt="शिक्षक">
+                <h3>श्री अरुण अवस्थी</h3>
+                <p>वरिष्ठ शिक्षक एवं प्रभारी</p>
+            </div>
+            <div class="faculty-card">
+                <img src="{{ url_for('static', filename='images/authorities/staff1.png') }}" alt="शिक्षक">
+                <h3>श्री सुबोध मिश्रा</h3>
+                <p>वरिष्ठ शिक्षक एवं परीक्षा प्रमुख</p>
+            </div>
+            <div class="faculty-card">
+                <img src="{{ url_for('static', filename='images/authorities/staff3.png') }}" alt="शिक्षक">
+                <h3>श्री सुशील शुक्ला</h3>
+                <p>परियोजना समन्वयक</p>
+            </div>
+            <div class="faculty-card">
+                <img src="{{ url_for('static', filename='images/authorities/staff5.png') }}" alt="शिक्षक">
+                <h3>सुश्री सपना पाण्डेय</h3>
+                <p>(शिक्षिका)</p>
+            </div>
+            <div class="faculty-card">
+                <img src="{{ url_for('static', filename='images/authorities/staff4.png') }}" alt="शिक्षक">
+                <h3>श्री अनुपम कुमार</h3>
+                <p>(शिक्षक)</p>
+            </div>
+            <div class="faculty-card">
+                <img src="{{ url_for('static', filename='images/authorities/staff6.png') }}" alt="शिक्षक">
+                <h3>श्री लालमणि बाजपेयी</h3>
+                <p>(शिक्षक)</p>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
