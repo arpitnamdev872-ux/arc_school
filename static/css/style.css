@@ -280,20 +280,58 @@ nav {
     background-size: cover;
     background-position: center;
     opacity: 0;
-    animation: dynamicSlider 18s linear infinite 0s;
+    animation: dynamicSlider 84s linear infinite 0s;
 }
 
-/* Adjusting Delays for 3 images */
+/* Adjusting Delays for 14 images */
 .hero-slider .slide:nth-child(1) { animation-delay: 0s; }
 .hero-slider .slide:nth-child(2) { animation-delay: 6s; }
 .hero-slider .slide:nth-child(3) { animation-delay: 12s; }
+.hero-slider .slide:nth-child(4) { animation-delay: 18s; }
+.hero-slider .slide:nth-child(5) { animation-delay: 24s; }
+.hero-slider .slide:nth-child(6) { animation-delay: 30s; }
+.hero-slider .slide:nth-child(7) { animation-delay: 36s; }
+.hero-slider .slide:nth-child(8) { animation-delay: 42s; }
+.hero-slider .slide:nth-child(9) { animation-delay: 48s; }
+.hero-slider .slide:nth-child(10) { animation-delay: 54s; }
+.hero-slider .slide:nth-child(11) { animation-delay: 60s; }
+.hero-slider .slide:nth-child(12) { animation-delay: 66s; }
+.hero-slider .slide:nth-child(13) { animation-delay: 72s; }
+.hero-slider .slide:nth-child(14) { animation-delay: 78s; }
 
 @keyframes dynamicSlider {
     0% { opacity: 0; transform: scale(1); }
-    8% { opacity: 1; } /* Fade In */
-    33% { opacity: 1; transform: scale(1.08); } /* Slow Zoom */
-    41% { opacity: 0; transform: scale(1.1); } /* Fade Out */
+    1.5% { opacity: 1; } /* Fade In */
+    6% { opacity: 1; transform: scale(1.08); } /* Slow Zoom */
+    7.14% { opacity: 0; transform: scale(1.1); } /* Fade Out */
     100% { opacity: 0; }
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    color: white;
+    background-color: rgba(183, 28, 28, 0.7); /* Primary color with transparency */
+    padding: 10px 25px;
+    font-size: 2.5rem; /* Adjust size as needed */
+    font-weight: 700;
+    border-radius: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--gold);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    opacity: 0; /* Initially hidden */
+    animation: fadeInText 1s ease-in-out 1s forwards; /* Fade in after 1s */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55); /* Dark overlay for text readability */
+    z-index: -1;
 }
 
 .hero-overlay {
@@ -522,8 +560,7 @@ section h2 {
 
 .facility-grid {
     display: grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
     gap: 30px;
 }
 
@@ -1157,7 +1194,7 @@ footer {
     gap:60px;
     padding-bottom: 20px;
     /* The animation will move the content */
-    animation: scroll-left 18s linear infinite;
+    animation: scroll-left 42s linear infinite;
     will-change: transform;
 }
 
@@ -1212,7 +1249,7 @@ footer {
     }
     .faculty-grid {
         gap: 30px;
-        animation: scroll-left 14s linear infinite;
+        animation: scroll-left 35s linear infinite;
     }
     .faculty-card {
         width: 170px;
@@ -3234,4 +3271,115 @@ textarea{
     color: #555;
     font-size: 1.05rem;
     line-height: 1.7;
+}
+
+/* =========================
+   NCC SECTION
+========================= */
+
+#ncc-section {
+    padding: 80px 5%;
+    background: var(--white);
+}
+
+.ncc-card {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: linear-gradient(135deg, var(--cream), #ffffff);
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border-left: 8px solid var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.ncc-card::after {
+    content: '\f132'; /* NCC Logo/Star like icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: -20px;
+    bottom: -40px;
+    font-size: 12rem;
+    color: rgba(183, 28, 28, 0.04);
+    z-index: 0;
+    transform: rotate(-15deg);
+}
+
+.ncc-content {
+    flex: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+.ncc-content h2 {
+    text-align: left;
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+}
+
+.ncc-motto {
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.ncc-content p {
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.ncc-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ncc-content ul li {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-left: 4px solid var(--gold);
+}
+
+.ncc-content ul li i {
+    color: var(--primary);
+}
+
+.ncc-image-wrapper {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.ncc-image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border: 8px solid white;
+}
+
+@media(max-width: 992px) {
+    .ncc-card {
+        flex-direction: column-reverse;
+        padding: 40px 30px;
+        text-align: center;
+    }
+    .ncc-content h2 {
+        text-align: center;
+    }
+    .ncc-content ul {
+        align-items: center;
+        display: inline-flex;
+        flex-direction: column;
+    }
 }
