@@ -145,6 +145,13 @@ header {
     font-size: 0.9rem;
 }
 
+.nav-links .language-switcher {
+    display: none; /* Hide by default */
+    padding: 10px 20px;
+    margin-top: 10px;
+    order: 99; /* Push to the end of the flex container */
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -236,6 +243,12 @@ nav {
 
 .dropdown:hover > a i {
     transform: rotate(180deg);
+}
+
+.dropdown-menu.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
 }
 
 .dropdown-menu li {
@@ -845,9 +858,10 @@ footer {
         display: block;
         background: #fdfdfd;
         border-left: 3px solid var(--primary);
-        margin-left: 15px;
+        margin: 10px 0 10px 20px;
         margin-top: 5px;
         border-radius: 0;
+        display: none; /* Hide by default on mobile */
     }
 
     .dropdown:hover .dropdown-menu {
@@ -869,6 +883,20 @@ footer {
 
     .logo img {
         height: 50px;
+    }
+
+    .nav-links .language-switcher {
+        display: block; /* Show in mobile menu */
+    }
+
+    .nav-links .language-switcher button {
+        background: var(--primary);
+        color: var(--white);
+        border-color: var(--primary);
+        padding: 8px 20px;
+        width: auto;
+        display: inline-block;
+        margin: 0;
     }
 
 }
@@ -3067,6 +3095,10 @@ textarea{
     .message-image {
         flex: none; /* Override flex:1 from desktop */
         width: 100%; /* Take full width */
+        max-width: 280px; /* A slightly smaller max-width for mobile images */
+        margin: 0 auto; /* Center the image container */
+    }
+    .message-image img {
         max-width: 280px; /* A slightly smaller max-width for mobile images */
         margin: 0 auto; /* Center the image container */
     }

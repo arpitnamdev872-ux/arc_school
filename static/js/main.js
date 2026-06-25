@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initializeTranslation();
 
+    moveLanguageSwitcherForMobile();
+
 });
 
 
@@ -413,25 +415,66 @@ function initializeMobileMenu() {
             }
         });
 
-        const links = navLinks.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                const icon = mobileMenu.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+        // Handle dropdowns in mobile menu
+        const dropdowns = navLinks.querySelectorAll('.dropdown > a');
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
+                // Check if it's in mobile view
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdownMenu = dropdown.nextElementSibling;
+                    dropdownMenu.classList.toggle('active');
+                    dropdown.querySelector('i').classList.toggle('fa-rotate-180');
+                }
             });
         });
 
+        // Close mobile menu when a non-dropdown link is clicked
+        const allLinks = navLinks.querySelectorAll('a');
+        allLinks.forEach(link => {
+            if (!link.parentElement.classList.contains('dropdown')) {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenu.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                });
+            }
+        });
     }
 
 }
 
 /* ===================================
+   MOVE LANGUAGE SWITCHER ON MOBILE
+=================================== */
+
+function moveLanguageSwitcherForMobile() {
+    const langSwitcher = document.querySelector('.language-switcher');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (langSwitcher && navLinks) {
+        // Create a list item to wrap the switcher for proper layout in the mobile menu
+        const existingMobileSwitcher = navLinks.querySelector('.language-switcher');
+        if (existingMobileSwitcher) {
+            return; // Already added
+        }
+        const listItem = document.createElement('li');
+        listItem.classList.add('language-switcher');
+        const clonedSwitcher = langSwitcher.cloneNode(true);
+        listItem.appendChild(clonedSwitcher); // Clone to avoid removing it from top-bar
+        navLinks.appendChild(listItem);
+
+        // Re-initialize translation for the cloned button
+        initializeTranslation(clonedSwitcher);
+    }
+}
+/* ===================================
    TRANSLATION
 =================================== */
 
-function initializeTranslation() {
+function initializeTranslation(context = document) {
+    const translateBtn = context.querySelector('#translate-btn') || document.getElementById('translate-btn');
+    if (!translateBtn) return;
+
     const translations = {
         // Header & Footer
         'school_name': 'Acharya Raghuveer Inter College',
@@ -797,9 +840,6 @@ function initializeTranslation() {
         'event_5_page_desc': 'Special programs and activities will be organized by students in honor of the teachers.',
     };
 
-    const translateBtn = document.getElementById('translate-btn');
-    if (!translateBtn) return;
-
     let originalTexts = {};
     let originalPlaceholders = {};
 
@@ -858,14 +898,21 @@ function initializeTranslation() {
         localStorage.setItem('preferredLanguage', language);
     };
 
-    translateBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const currentLang = translateBtn.dataset.lang;
-        if (currentLang === 'en') {
-            updateTexts('en');
-        } else {
-            updateTexts('hi');
-        }
+    // Use a function to handle the click to avoid attaching multiple listeners
+    const handleTranslateClick = (e) => {
+         e.preventDefault();
+         const btn = e.currentTarget;
+         const currentLang = btn.dataset.lang || 'en';
+         if (currentLang === 'en') {
+             updateTexts('en');
+         } else {
+             updateTexts('hi');
+         }
+    };
+
+    // Attach event listener to all translate buttons
+    document.querySelectorAll('#translate-btn').forEach(btn => {
+        btn.addEventListener('click', handleTranslateClick);
     });
 
     // On page load, check for saved language preference
