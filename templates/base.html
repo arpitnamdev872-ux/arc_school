@@ -38,6 +38,9 @@
                 <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
                 <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
+            <div class="language-switcher">
+                <button id="translate-btn" data-lang="en">English</button>
+            </div>
         </div>
 
         <nav>
@@ -48,8 +51,8 @@
                     <img src="{{ url_for('static', filename='images/school/logo7.PNG') }}" alt="Logo">
 
                     <div class="logo-text">
-                        <h2>आचार्य रघुवीर इण्टर कॉलेज</h2>
-                        <p>रघुवीर नगर, रूमा, कानपुर</p>
+                        <h2 data-translate-key="school_name">आचार्य रघुवीर इण्टर कॉलेज</h2>
+                        <p data-translate-key="school_address_short">रघुवीर नगर, रूमा, कानपुर</p>
                     </div>
                 </a>
 
@@ -61,35 +64,35 @@
 
             <ul class="nav-links">
 
-                <li><a href="/">मुख्य पृष्ठ</a></li>
+                <li><a href="/" data-translate-key="nav_home">मुख्य पृष्ठ</a></li>
 
                 <li class="dropdown">
-                    <a href="/about">परिचय <i class="fas fa-chevron-down"></i></a>
+                    <a href="/about" data-translate-key="nav_about">परिचय <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/about">संस्थान के बारे में</a></li>
-                        <li><a href="/vision">दृष्टिकोण और मिशन</a></li>
-                        <li><a href="/values">हमारे मूल्य</a></li>
+                        <li><a href="/about" data-translate-key="nav_about_institute">संस्थान के बारे में</a></li>
+                        <li><a href="/vision" data-translate-key="nav_vision_mission">दृष्टिकोण और मिशन</a></li>
+                        <li><a href="/values" data-translate-key="nav_values">हमारे मूल्य</a></li>
                     </ul>
                 </li>
 
                 <li class="dropdown">
-                    <a href="/academics">शैक्षणिक <i class="fas fa-chevron-down"></i></a>
+                    <a href="/academics" data-translate-key="nav_academics">शैक्षणिक <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/academics">पाठ्यक्रम</a></li>
-                        <li><a href="/admission">प्रवेश प्रक्रिया</a></li>
+                        <li><a href="/academics" data-translate-key="nav_courses">पाठ्यक्रम</a></li>
+                        <li><a href="/admission" data-translate-key="nav_admission_process">प्रवेश प्रक्रिया</a></li>
                     </ul>
                 </li>
 
                 <li class="dropdown">
-                    <a href="/events">गतिविधियाँ <i class="fas fa-chevron-down"></i></a>
+                    <a href="/events" data-translate-key="nav_activities">गतिविधियाँ <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/events">आगामी कार्यक्रम</a></li>
-                        <li><a href="/news">नवीनतम समाचार</a></li>
-                        <li><a href="/gallery">विद्यालय गैलरी</a></li>
+                        <li><a href="/events" data-translate-key="nav_upcoming_events">आगामी कार्यक्रम</a></li>
+                        <li><a href="/news" data-translate-key="nav_latest_news">नवीनतम समाचार</a></li>
+                        <li><a href="/gallery" data-translate-key="nav_gallery">विद्यालय गैलरी</a></li>
                     </ul>
                 </li>
 
-                <li><a href="/complaint">सम्पर्क / सुझाव</a></li>
+                <li><a href="/complaint" data-translate-key="nav_contact">सम्पर्क / सुझाव</a></li>
 
             </ul>
 
@@ -111,31 +114,31 @@
                 <!-- Column 1 -->
                 <div class="footer-col school-identity">
                     <img src="{{ url_for('static', filename='images/school/logo7.PNG') }}" alt="विद्यालय लोगो" class="footer-logo">
-                <h3>आचार्य रघुवीर इण्टर कॉलेज</h3>
-                    <p class="school-motto">"वयं राष्ट्रे जागृयाम"</p>
-                    <p class="school-desc"> आदर्श शिक्षण संस्थान, जहाँ संस्कार, अनुशासन और आधुनिक शिक्षा का अद्भुत संगम है।</p>
+                <h3 data-translate-key="school_name">आचार्य रघुवीर इण्टर कॉलेज</h3>
+                    <p class="school-motto" data-translate-key="school_motto_quote">"वयं राष्ट्रे जागृयाम"</p>
+                    <p class="school-desc" data-translate-key="footer_desc"> आदर्श शिक्षण संस्थान, जहाँ संस्कार, अनुशासन और आधुनिक शिक्षा का अद्भुत संगम है।</p>
                 </div>
         
                 <!-- Column 2 -->
                 <div class="footer-col">
-                    <h3>महत्वपूर्ण लिंक</h3>
+                    <h3 data-translate-key="footer_links_title">महत्वपूर्ण लिंक</h3>
                     <ul class="footer-links">
-                        <li><a href="/about"><i class="fas fa-arrow-right"></i> विद्यालय परिचय</a></li>
-                        <li><a href="/academics"><i class="fas fa-arrow-right"></i> शैक्षणिक कार्यक्रम</a></li>
-                        <li><a href="/admission"><i class="fas fa-arrow-right"></i> प्रवेश प्रक्रिया</a></li>
-                        <li><a href="/news"><i class="fas fa-arrow-right"></i> नवीनतम समाचार</a></li>
-                        <li><a href="/gallery"><i class="fas fa-arrow-right"></i> विद्यालय गैलरी</a></li>
-                        <li><a href="/complaint"><i class="fas fa-arrow-right"></i> सम्पर्क / सुझाव</a></li>
+                        <li><a href="/about"><i class="fas fa-arrow-right"></i> <span data-translate-key="footer_link_about">विद्यालय परिचय</span></a></li>
+                        <li><a href="/academics"><i class="fas fa-arrow-right"></i> <span data-translate-key="footer_link_academics">शैक्षणिक कार्यक्रम</span></a></li>
+                        <li><a href="/admission"><i class="fas fa-arrow-right"></i> <span data-translate-key="footer_link_admission">प्रवेश प्रक्रिया</span></a></li>
+                        <li><a href="/news"><i class="fas fa-arrow-right"></i> <span data-translate-key="footer_link_news">नवीनतम समाचार</span></a></li>
+                        <li><a href="/gallery"><i class="fas fa-arrow-right"></i> <span data-translate-key="footer_link_gallery">विद्यालय गैलरी</span></a></li>
+                        <li><a href="/complaint"><i class="fas fa-arrow-right"></i> <span data-translate-key="footer_link_contact">सम्पर्क / सुझाव</span></a></li>
                     </ul>
                 </div>
         
                 <!-- Column 3 -->
                 <div class="footer-col">
-                    <h3>सम्पर्क सूत्र</h3>
+                    <h3 data-translate-key="footer_contact_title">सम्पर्क सूत्र</h3>
                     <ul class="footer-contact">
                         <li>
                             <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="text-box">रघुवीर नगर, रूमा,<br>कानपुर, उत्तर प्रदेश - 208008</div>
+                            <div class="text-box" data-translate-key="footer_address">रघुवीर नगर, रूमा,<br>कानपुर, उत्तर प्रदेश - 208008</div>
                         </li>
                         <li>
                             <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
@@ -143,14 +146,14 @@
                         </li>
                         <li>
                             <div class="icon-box"><i class="fas fa-envelope"></i></div>
-                            <div class="text-box">aricrooma@gmail.com</div>
+                            <div class="text-box" data-translate-key="footer_email">aricrooma@gmail.com</div>
                         </li>
                     </ul>
                 </div>
         
                 <!-- Column 4 -->
                 <div class="footer-col">
-                    <h3>स्थान एवं मीडिया</h3>
+                    <h3 data-translate-key="footer_location_title">स्थान एवं मीडिया</h3>
                     <div class="footer-map">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.4055421921607!2d80.44782057513842!3d26.345742084226504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c42799ac8a2b5%3A0xc4f0ce501936089a!2sAcharya%20Raghuveer%20Inter%20College%2C%20Shubh%20Computer!5e0!3m2!1sen!2sus!4v1781085583621!5m2!1sen!2sus" width="100%" height="150" style="border:0; border-radius:12px; margin-bottom:15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
@@ -163,10 +166,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>
+                <p data-translate-key="footer_copyright">
                 © <span id="currentYear">2026</span> आचार्य रघुवीर इण्टर कॉलेज | सर्वाधिकार सुरक्षित
                 </p>
-                <p>
+                <p data-translate-key="footer_credits">
                     Website Designed & Developed By
                     <strong>Pinweb Private Limited</strong>
                 </p>
@@ -182,21 +185,21 @@
 
     <button class="erp-btn">
 
-    <i class="fas fa-user-graduate"></i>
+        <i class="fas fa-user-graduate"></i>
 
-    ERP लॉगिन
+        <span data-translate-key="erp_login">ERP लॉगिन</span>
 
     </button>
 
     <div class="erp-menu">
 
-        <a href="/student-login">
+        <a href="/student-login" data-translate-key="erp_student_login">
 
             विद्यार्थी / अभिभावक लॉगिन
 
         </a>
 
-        <a href="/admin-login">
+        <a href="/admin-login" data-translate-key="erp_admin_login">
 
             प्रशासक / स्टाफ लॉगिन
 

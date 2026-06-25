@@ -88,6 +88,7 @@ header {
     background: var(--primary);
     color: var(--white);
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 8px 5%;
     font-size: 0.95rem;
@@ -126,11 +127,29 @@ header {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+/* Language Switcher */
+.language-switcher {
+    margin-left: 20px;
+}
+
+.language-switcher button {
+    background: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 0.9rem;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 5%;
+    padding: 8px 5%;
     background: rgba(255, 255, 255, 0.98);
 }
 
@@ -141,7 +160,7 @@ nav {
 }
 
 .logo img {
-    height: 65px;
+    height: 85px;
 }
 
 .logo-text h2 {
@@ -2665,6 +2684,19 @@ textarea{
     .updates-wrapper {
         grid-template-columns: 1fr;
     }
+}
+
+.error-message {
+    color: #B71C1C;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: block;
+    margin-top: 5px;
+}
+
+.form-group input.invalid, .form-group select.invalid, .form-group textarea.invalid {
+    border-color: #B71C1C !important;
+    background-color: #fdecea !important;
 }
 
 /* =========================

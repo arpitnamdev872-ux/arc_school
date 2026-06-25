@@ -3,35 +3,41 @@
 {% block content %}
 
 <!-- Page Banner -->
-<section class="page-banner" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;">
+<section class="page-banner" style="background: linear-gradient(135deg, rgba(183, 28, 28, 0.9), rgba(244, 180, 0, 0.8)), url('{{ url_for('static', filename='images/school/campus_coridor.png') }}') center/cover fixed;">
     <div class="container">
-        <h1 style="color: white;">नवीनतम सूचनाएँ</h1>
-        <p style="color: var(--gold); font-size: 1.3rem;">विद्यालय की महत्वपूर्ण घोषणाएँ एवं अपडेट</p>
+        <h1 data-translate-key="news_page_title">नवीनतम सूचनाएँ</h1>
+        <p data-translate-key="news_page_subtitle">विद्यालय की महत्वपूर्ण घोषणाएँ एवं अपडेट</p>
     </div>
 </section>
 
+<!-- News Grid Section -->
 <section class="news-page-section">
     <div class="container">
-        {% if notices %}
         <div class="news-page-grid">
-            {% for item in notices %}
-            <div class="news-page-card">
-                <div class="news-img">
-                    <img src="{{ item.image }}" alt="{{ item.title }}">
+
+            {% if notices %}
+                {% for notice in notices %}
+                <div class="news-page-card">
+                    <div class="news-img">
+                        <img src="{{ notice.image }}" alt="{{ notice.title }}">
+                    </div>
+                    <div class="news-content">
+                        <h3>
+                            <span class="notice-icon">{{ notice.icon }}</span>
+                            <span data-translate-key="notice_{{ loop.index }}_title">{{ notice.title }}</span>
+                        </h3>
+                        <p data-translate-key="notice_{{ loop.index }}_desc">{{ notice.description }}</p>
+                    </div>
                 </div>
-                <div class="news-content">
-                    <h3><span class="notice-icon">{{ item.icon }}</span> {{ item.title }}</h3>
-                    <p>{{ item.description }}</p>
+                {% endfor %}
+            {% else %}
+                <div class="no-news-box" style="grid-column: 1 / -1;">
+                    <h3>कोई सूचना उपलब्ध नहीं है</h3>
+                    <p>नवीनतम अपडेट के लिए कृपया बाद में देखें।</p>
                 </div>
-            </div>
-            {% endfor %}
+            {% endif %}
+
         </div>
-        {% else %}
-        <div class="no-news-box">
-            <h3>कोई सूचना उपलब्ध नहीं है</h3>
-            <p>नवीनतम जानकारी के लिए कृपया बाद में देखें।</p>
-        </div>
-        {% endif %}
     </div>
 </section>
 

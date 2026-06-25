@@ -2,88 +2,86 @@
 
 {% block content %}
 
-    <!-- Vision Banner -->
-    <section class="page-banner" style="background: linear-gradient(135deg, rgba(183, 28, 28, 0.85), rgba(244, 180, 0, 0.8)), url('{{ url_for('static', filename='images/school/campus5.png') }}') center/cover no-repeat; padding-top: 180px; padding-bottom: 80px; margin-top: -90px;">
+    <!-- Page Banner -->
+    <section class="about-banner" style="background: linear-gradient(135deg, rgba(183, 28, 28, 0.9), rgba(244, 180, 0, 0.8)), url('{{ url_for('static', filename='images/school/campus_coridor.png') }}') center/cover fixed;">
         <div class="container">
-            <h1 style="color: white; font-size: 3.8rem; margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3);">दृष्टिकोण एवं मिशन</h1>
-            <p style="color: var(--cream); font-size: 1.4rem; font-weight: 600;">एक सशक्त, सुसंस्कृत और आत्मनिर्भर राष्ट्र का निर्माण</p>
+            <h1 data-translate-key="vision_page_title">दृष्टिकोण एवं मिशन</h1>
+            <p data-translate-key="vision_page_subtitle">एक सशक्त, सुसंस्कृत और आत्मनिर्भर राष्ट्र का निर्माण</p>
         </div>
     </section>
 
-    <!-- Vision & Mission Section -->
-    <section class="vision-mission-section" style="padding: 80px 5%; background: var(--white);">
-        <div class="container">
-            <div class="vision-grid" style="gap: 40px;">
-                
-                <!-- Vision -->
-                <div class="vision-card card" style="padding: 50px 40px; text-align: center; border-bottom: 6px solid var(--gold); border-top: none;">
-                    <div style="font-size: 4rem; color: var(--gold); margin-bottom: 25px;"><i class="fas fa-eye"></i></div>
-                    <h2 style="color: var(--primary); margin-bottom: 25px; font-size: 2.2rem;">हमारा दृष्टिकोण (Vision)</h2>
-                    <p style="font-size: 1.15rem; line-height: 1.9; color: #555; text-align: justify;">
-                        प्रचण्ड तेजोमय शारीरिक बल, प्रबल आत्म विश्वास युक्त बौद्धिक क्षमता एवं निस्सीम भाव सम्पन्ना मनः शक्ति का अर्जन कर अपने जीवन को निस्पृह भाव से भारत माँ के चरणों में अर्पित करना ही हमारा परम साध्य है। हम एक ऐसे समाज की कल्पना करते हैं जहाँ आधुनिक ज्ञान और सनातन संस्कारों का अनूठा संगम हो।
-                    </p>
-                </div>
+    <div class="about-sections-wrapper">
 
-                <!-- Mission -->
-                <div class="vision-card card" style="padding: 50px 40px; text-align: center; border-bottom: 6px solid var(--primary); border-top: none;">
-                    <div style="font-size: 4rem; color: var(--primary); margin-bottom: 25px;"><i class="fas fa-bullseye"></i></div>
-                    <h2 style="color: var(--primary); margin-bottom: 25px; font-size: 2.2rem;">हमारा मिशन (Mission)</h2>
-                    <p style="font-size: 1.15rem; line-height: 1.9; color: #555; text-align: justify;">
-                        इस प्रकार की राष्ट्रीय शिक्षा प्रणाली का विकास करना जिसके द्वारा ऐसी युवा पीढी का निर्माण हो सके जो हिन्दुत्वनिष्ठ एवं राष्ट्रभक्ति से ओत-प्रोत हो। शारीरिक, प्राणिक, मानसिक, एवं आध्यात्मिक दृष्टि से पूर्ण विकसित हो तथा जो जीवन की वर्तमान चुनौतियों का सामना सफलतापूर्वक कर सके और समाज के वंचित वर्गों को सशक्त बनाने के लिए समर्पित हो।
-                    </p>
-                </div>
-
+        <!-- Vision Section -->
+        <section class="vision">
+            <div class="container card about-card">
+                <h2 data-translate-key="vision_section_title">हमारा दृष्टिकोण (Vision)</h2>
+                <p data-translate-key="vision_section_desc">
+                    प्रचण्ड तेजोमय शारीरिक बल, प्रबल आत्म विश्वास युक्त बौद्धिक क्षमता एवं निस्सीम भाव सम्पन्ना मनः शक्ति का अर्जन कर अपने जीवन को निस्पृह भाव से भारत माँ के चरणों में अर्पित करना ही हमारा परम साध्य है। हम एक ऐसे समाज की कल्पना करते हैं जहाँ आधुनिक ज्ञान और सनातन संस्कारों का अनूठा संगम हो।
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Core Objectives -->
-    <section class="core-objectives" style="padding: 80px 5%; background: var(--cream);">
-        <div class="container">
-            <h2 style="text-align: center; color: var(--primary); font-size: 3rem; margin-bottom: 60px;">मुख्य उद्देश्य (Core Objectives)</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px;">
-                
-                <div class="card" style="text-align: center; padding: 40px 30px; border-radius: 15px; border-bottom: 5px solid var(--primary); transition: transform 0.4s ease;">
-                    <i class="fas fa-user-graduate" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
-                    <h3 style="color: var(--dark); margin-bottom: 15px; font-size: 1.5rem;">शैक्षणिक उत्कृष्टता</h3>
-                    <p style="color: #666; font-size: 1.05rem; line-height: 1.6;">आधुनिक शिक्षा प्रणाली और स्मार्ट तकनीक के माध्यम से विद्यार्थियों को उच्च कोटि का ज्ञान एवं कौशल प्रदान करना।</p>
-                </div>
-
-                <div class="card" style="text-align: center; padding: 40px 30px; border-radius: 15px; border-bottom: 5px solid var(--secondary); transition: transform 0.4s ease;">
-                    <i class="fas fa-praying-hands" style="font-size: 3rem; color: var(--secondary); margin-bottom: 20px;"></i>
-                    <h3 style="color: var(--dark); margin-bottom: 15px; font-size: 1.5rem;">संस्कार एवं चरित्र</h3>
-                    <p style="color: #666; font-size: 1.05rem; line-height: 1.6;">भारतीय संस्कृति, योग एवं नैतिक मूल्यों के आधार पर उत्तम चरित्र और एक अनुशासित जीवन का निर्माण करना।</p>
-                </div>
-
-                <div class="card" style="text-align: center; padding: 40px 30px; border-radius: 15px; border-bottom: 5px solid var(--accent); transition: transform 0.4s ease;">
-                    <i class="fas fa-hands-helping" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px;"></i>
-                    <h3 style="color: var(--dark); margin-bottom: 15px; font-size: 1.5rem;">सामाजिक उत्तरदायित्व</h3>
-                    <p style="color: #666; font-size: 1.05rem; line-height: 1.6;">समाज के प्रति संवेदनशीलता और राष्ट्र निर्माण के कार्यों में सकारात्मक योगदान देने की भावना का विकास।</p>
-                </div>
-
-                <div class="card" style="text-align: center; padding: 40px 30px; border-radius: 15px; border-bottom: 5px solid var(--gold); transition: transform 0.4s ease;">
-                    <i class="fas fa-running" style="font-size: 3rem; color: var(--gold); margin-bottom: 20px;"></i>
-                    <h3 style="color: var(--dark); margin-bottom: 15px; font-size: 1.5rem;">सर्वांगीण विकास</h3>
-                    <p style="color: #666; font-size: 1.05rem; line-height: 1.6;">शारीरिक, मानसिक, बौद्धिक और आध्यात्मिक स्तर पर विद्यार्थियों का पूर्ण विकास सुनिश्चित करना।</p>
-                </div>
-
+        <!-- Mission Section -->
+        <section class="mission">
+            <div class="container card about-card">
+                <h2 data-translate-key="mission_section_title">हमारा मिशन (Mission)</h2>
+                <p data-translate-key="mission_section_desc">
+                    इस प्रकार की राष्ट्रीय शिक्षा प्रणाली का विकास करना जिसके द्वारा ऐसी युवा पीढी का निर्माण हो सके जो हिन्दुत्वनिष्ठ एवं राष्ट्रभक्ति से ओत-प्रोत हो। शारीरिक, प्राणिक, मानसिक, एवं आध्यात्मिक दृष्टि से पूर्ण विकसित हो तथा जो जीवन की वर्तमान चुनौतियों का सामना सफलतापूर्वक कर सके और समाज के वंचित वर्गों को सशक्त बनाने के लिए समर्पित हो।
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Quote / Philosophy -->
-    <section class="philosophy" style="padding: 100px 5%; background: var(--white);">
-        <div class="container">
-            <div class="quote-card card" style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none; padding: 80px 40px; text-align: center; border-radius: 20px; box-shadow: 0 15px 40px rgba(183, 28, 28, 0.3);">
-                <i class="fas fa-quote-left" style="font-size: 4rem; color: var(--gold); margin-bottom: 25px; opacity: 0.9;"></i>
-                <blockquote style="font-size: 3rem; font-weight: 800; margin-bottom: 25px; color: white; font-family: serif; letter-spacing: 2px;">"सा विद्या या विमुक्तये"</blockquote>
-                <div style="width: 100px; height: 4px; background: var(--gold); margin: 0 auto 25px auto; border-radius: 2px;"></div>
-                <p style="font-size: 1.4rem; color: var(--cream); max-width: 900px; margin: 0 auto; line-height: 1.9; font-weight: 500;">
+        <!-- Core Objectives Section -->
+        <section class="objectives">
+            <div class="container">
+                <h2 data-translate-key="objectives_title" style="font-size: 2.5rem; text-align: center; color: var(--primary); margin-bottom: 40px;">मुख्य उद्देश्य (Core Objectives)</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+
+                    <!-- Objective 1 -->
+                    <div class="card" style="text-align: center; border-top: 5px solid var(--primary);">
+                        <i class="fas fa-graduation-cap" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
+                        <h3 data-translate-key="obj_1_title" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;">शैक्षणिक उत्कृष्टता</h3>
+                        <p data-translate-key="obj_1_desc" style="font-size: 1rem; color: #555;">आधुनिक शिक्षा प्रणाली और स्मार्ट तकनीक के माध्यम से विद्यार्थियों को उच्च कोटि का ज्ञान एवं कौशल प्रदान करना।</p>
+                    </div>
+
+                    <!-- Objective 2 -->
+                    <div class="card" style="text-align: center; border-top: 5px solid var(--secondary);">
+                        <i class="fas fa-om" style="font-size: 3rem; color: var(--secondary); margin-bottom: 15px;"></i>
+                        <h3 data-translate-key="obj_2_title" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;">संस्कार एवं चरित्र</h3>
+                        <p data-translate-key="obj_2_desc" style="font-size: 1rem; color: #555;">भारतीय संस्कृति, योग एवं नैतिक मूल्यों के आधार पर उत्तम चरित्र और एक अनुशासित जीवन का निर्माण करना।</p>
+                    </div>
+
+                    <!-- Objective 3 -->
+                    <div class="card" style="text-align: center; border-top: 5px solid var(--accent);">
+                        <i class="fas fa-hands-helping" style="font-size: 3rem; color: var(--accent); margin-bottom: 15px;"></i>
+                        <h3 data-translate-key="obj_3_title" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;">सामाजिक उत्तरदायित्व</h3>
+                        <p data-translate-key="obj_3_desc" style="font-size: 1rem; color: #555;">समाज के प्रति संवेदनशीलता और राष्ट्र निर्माण के कार्यों में सकारात्मक योगदान देने की भावना का विकास।</p>
+                    </div>
+
+                    <!-- Objective 4 -->
+                    <div class="card" style="text-align: center; border-top: 5px solid var(--gold);">
+                        <i class="fas fa-brain" style="font-size: 3rem; color: var(--gold); margin-bottom: 15px;"></i>
+                        <h3 data-translate-key="obj_4_title" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;">सर्वांगीण विकास</h3>
+                        <p data-translate-key="obj_4_desc" style="font-size: 1rem; color: #555;">शारीरिक, मानसिक, बौद्धिक और आध्यात्मिक स्तर पर विद्यार्थियों का पूर्ण विकास सुनिश्चित करना।</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Quote Section -->
+        <section class="quote">
+            <div class="container card quote-card" style="background: var(--primary); color: white;">
+                <blockquote data-translate-key="vision_quote_title" style="font-size: 2.2rem; color: var(--gold);">
+                    "सा विद्या या विमुक्तये"
+                </blockquote>
+                <p data-translate-key="vision_quote_desc" style="font-size: 1.2rem; color: var(--cream); font-weight: 500; max-width: 900px; margin: auto;">
                     "शिक्षा वही है जो मनुष्य को अज्ञान, अभाव और अन्याय से मुक्त करे। हमारा लक्ष्य केवल साक्षर बनाना नहीं, अपितु एक ऐसा नागरिक गढ़ना है जो स्वधर्म, स्वदेशी और स्वाभिमान के प्रति पूर्ण रूप से जागरूक हो।"
                 </p>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </div>
 
 {% endblock %}

@@ -4,8 +4,8 @@
     <!-- Page Banner -->
     <section class="page-banner" style="background: linear-gradient(135deg, rgba(183, 28, 28, 0.9), rgba(244, 180, 0, 0.8)), url('{{ url_for('static', filename='images/school/campus5.png') }}') center/cover fixed; padding-top: 180px; padding-bottom: 80px; margin-top: -90px;">
         <div class="container">
-            <h1 style="font-size: 3.5rem; margin-bottom: 15px; animation: fadeUp 1s ease-out; color: white;">सम्पर्क एवं सुझाव</h1>
-            <p style="font-size: 1.2rem; color: var(--cream);">आपके अमूल्य सुझाव एवं मार्गदर्शन हमारे लिए अत्यंत महत्त्वपूर्ण हैं।</p>
+            <h1 style="font-size: 3.5rem; margin-bottom: 15px; animation: fadeUp 1s ease-out; color: white;" data-translate-key="contact_banner_title">सम्पर्क एवं सुझाव</h1>
+            <p style="font-size: 1.2rem; color: var(--cream);" data-translate-key="contact_banner_subtitle">आपके अमूल्य सुझाव एवं मार्गदर्शन हमारे लिए अत्यंत महत्त्वपूर्ण हैं।</p>
         </div>
     </section>
 
@@ -16,98 +16,104 @@
 
                 <!-- Form Column -->
                 <div class="complaint-form-box card">
-                    <h2 style="color: var(--primary); margin-bottom: 10px; font-size: 2rem; text-align: left;"><i class="fas fa-paper-plane"></i> ऑनलाइन संपर्क करें</h2>
-                    <p style="color: #555; margin-bottom: 30px;">विद्यालय प्रशासन, शिक्षण व्यवस्था या अन्य किसी विषय पर अपने विचार, प्रश्न या सुझाव साझा करें।</p>
+                    <h2 style="color: var(--primary); margin-bottom: 10px; font-size: 2rem; text-align: left;" data-translate-key="contact_form_title"><i class="fas fa-paper-plane"></i> ऑनलाइन संपर्क करें</h2>
+                    <p style="color: #555; margin-bottom: 30px;" data-translate-key="contact_form_subtitle">विद्यालय प्रशासन, शिक्षण व्यवस्था या अन्य किसी विषय पर अपने विचार, प्रश्न या सुझाव साझा करें।</p>
 
-                    <form method="POST" action="/complaint" enctype="multipart/form-data">
+                    <form id="complaint-form" method="POST" action="/complaint" enctype="multipart/form-data" novalidate>
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label>आपका नाम <span style="color: red;">*</span></label>
-                                <input type="text" name="name" placeholder="अपना पूरा नाम दर्ज करें" required>
+                                <label data-translate-key="label_your_name">आपका नाम <span style="color: red;">*</span></label>
+                                <input type="text" name="name" placeholder="अपना पूरा नाम दर्ज करें" required data-translate-placeholder="placeholder_name">
+                                <span class="error-message"></span>
                             </div>
                             <div class="form-group">
-                                <label>मोबाइल नंबर <span style="color: red;">*</span></label>
-                                <input type="tel" name="mobile" placeholder="10 अंकों का मोबाइल नंबर" required>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>ईमेल (वैकल्पिक)</label>
-                                <input type="email" name="email" placeholder="अपना ईमेल एड्रेस दर्ज करें">
-                            </div>
-                            <div class="form-group">
-                                <label>विद्यार्थी का नाम (यदि लागू हो)</label>
-                                <input type="text" name="student_name" placeholder="विद्यार्थी का नाम दर्ज करें">
+                                <label data-translate-key="label_mobile">मोबाइल नंबर <span style="color: red;">*</span></label>
+                                <input type="tel" name="mobile" placeholder="10 अंकों का मोबाइल नंबर" required data-translate-placeholder="placeholder_mobile">
+                                <span class="error-message"></span>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
-                                <label>कक्षा</label>
+                                <label data-translate-key="label_email">ईमेल (वैकल्पिक)</label>
+                                <input type="email" name="email" placeholder="अपना ईमेल एड्रेस दर्ज करें" data-translate-placeholder="placeholder_email">
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label data-translate-key="label_student_name">विद्यार्थी का नाम (यदि लागू हो)</label>
+                                <input type="text" name="student_name" placeholder="विद्यार्थी का नाम दर्ज करें" data-translate-placeholder="placeholder_student_name">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-translate-key="label_class">कक्षा</label>
                                 <select name="class">
-                                    <option value="">कक्षा चुनें</option>
-                                    <option>कक्षा 6</option>
-                                    <option>कक्षा 7</option>
-                                    <option>कक्षा 8</option>
-                                    <option>कक्षा 9</option>
-                                    <option>कक्षा 10</option>
-                                    <option>कक्षा 11</option>
-                                    <option>कक्षा 12</option>
+                                    <option value="" data-translate-key="select_class">कक्षा चुनें</option>
+                                    <option data-translate-key="class_6">कक्षा 6</option>
+                                    <option data-translate-key="class_7">कक्षा 7</option>
+                                    <option data-translate-key="class_8">कक्षा 8</option>
+                                    <option data-translate-key="class_9">कक्षा 9</option>
+                                    <option data-translate-key="class_10">कक्षा 10</option>
+                                    <option data-translate-key="class_11">कक्षा 11</option>
+                                    <option data-translate-key="class_12">कक्षा 12</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>श्रेणी <span style="color: red;">*</span></label>
+                                <label data-translate-key="label_category">श्रेणी <span style="color: red;">*</span></label>
                                 <select name="category" required>
-                                    <option value="">श्रेणी चुनें</option>
-                                    <option value="Suggestion">सुझाव (Suggestion)</option>
-                                    <option value="Complaint">शिकायत (Complaint)</option>
-                                    <option value="Inquiry">पूछताछ (Inquiry)</option>
-                                    <option value="Other">अन्य (Other)</option>
+                                    <option value="" data-translate-key="select_category">श्रेणी चुनें</option>
+                                    <option value="Suggestion" data-translate-key="cat_suggestion">सुझाव (Suggestion)</option>
+                                    <option value="Complaint" data-translate-key="cat_complaint">शिकायत (Complaint)</option>
+                                    <option value="Inquiry" data-translate-key="cat_inquiry">पूछताछ (Inquiry)</option>
+                                    <option value="Other" data-translate-key="cat_other">अन्य (Other)</option>
                                 </select>
+                                <span class="error-message"></span>
                             </div>
                         </div>
 
                         <div class="form-group" style="width: 100%;">
-                            <label>विषय <span style="color: red;">*</span></label>
-                            <input type="text" name="subject" placeholder="आपके संदेश का मुख्य विषय" required>
+                            <label data-translate-key="label_subject">विषय <span style="color: red;">*</span></label>
+                            <input type="text" name="subject" placeholder="आपके संदेश का मुख्य विषय" required data-translate-placeholder="placeholder_subject">
+                            <span class="error-message"></span>
                         </div>
 
                         <div class="form-group" style="width: 100%;">
-                            <label>आपका संदेश / विवरण <span style="color: red;">*</span></label>
-                            <textarea name="complaint" rows="6" placeholder="अपना संदेश या सुझाव का पूरा विवरण यहाँ विस्तार से लिखें..." required></textarea>
+                            <label data-translate-key="label_message">आपका संदेश / विवरण <span style="color: red;">*</span></label>
+                            <textarea name="complaint" rows="6" placeholder="अपना संदेश या सुझाव का पूरा विवरण यहाँ विस्तार से लिखें..." required data-translate-placeholder="placeholder_message"></textarea>
+                            <span class="error-message"></span>
                         </div>
 
                         <div class="form-group" style="width: 100%; margin-bottom: 25px;">
-                            <label>संबंधित दस्तावेज़ / फोटो (यदि हो)</label>
+                            <label data-translate-key="label_attachment">संबंधित दस्तावेज़ / फोटो (यदि हो)</label>
                             <input type="file" name="attachment" style="padding: 10px; background: #f9f9f9; border: 2px dashed #ccc; cursor: pointer;">
                         </div>
 
-                        <button type="submit" class="erp-btn" style="width: 100%; text-align: center; border-radius: 10px;"><i class="fas fa-paper-plane"></i> संदेश भेजें</button>
+                        <button type="submit" class="erp-btn" style="width: 100%; text-align: center; border-radius: 10px;" data-translate-key="btn_send_message"><i class="fas fa-paper-plane"></i> संदेश भेजें</button>
                     </form>
                 </div>
 
                 <!-- Map and Contact Info Column -->
                 <div class="complaint-info-box card" style="background: var(--primary); color: white;">
-                    <h3 style="color: var(--gold); margin-bottom: 20px; font-size: 1.8rem;"><i class="fas fa-headset"></i> संपर्क जानकारी</h3>
-                    <p style="margin-bottom: 30px; line-height: 1.8; color: var(--cream);">किसी भी तत्काल सहायता या पूछताछ के लिए आप हमारे कार्यालय में सीधे संपर्क कर सकते हैं या विद्यालय प्रांगण में आ सकते हैं।</p>
+                    <h3 style="color: var(--gold); margin-bottom: 20px; font-size: 1.8rem;" data-translate-key="contact_info_title"><i class="fas fa-headset"></i> संपर्क जानकारी</h3>
+                    <p style="margin-bottom: 30px; line-height: 1.8; color: var(--cream);" data-translate-key="contact_info_p">किसी भी तत्काल सहायता या पूछताछ के लिए आप हमारे कार्यालय में सीधे संपर्क कर सकते हैं या विद्यालय प्रांगण में आ सकते हैं।</p>
                     
                     <ul class="contact-list" style="list-style: none; padding: 0; margin-bottom: 30px; overflow: hidden;">
                         <li class="contact-slide-item map-slide" style="margin-bottom: 15px; display: flex; gap: 15px; align-items: flex-start;">
                             <div class="color-icon map-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <span style="font-size: 1.1rem; line-height: 1.4; color: var(--cream);">आचार्य रघुवीर इण्टर कॉलेज<br>रघुवीर नगर, रूमा, कानपुर</span>
+                            <span style="font-size: 1.1rem; line-height: 1.4; color: var(--cream);" data-translate-key="contact_info_address">आचार्य रघुवीर इण्टर कॉलेज<br>रघुवीर नगर, रूमा, कानपुर</span>
                         </li>
                         <li class="contact-slide-item phone-slide" style="margin-bottom: 15px; display: flex; gap: 15px; align-items: center;">
                             <a href="tel:+919450121054" style="display: flex; gap: 15px; align-items: center; text-decoration: none; color: inherit; width: 100%;">
                                 <div class="color-icon phone-icon"><i class="fas fa-phone-alt"></i></div>
-                                <span style="font-size: 1.1rem; color: var(--cream);">+91 9450121054 <br> +91 9838624848</span>
+                                <span style="font-size: 1.1rem; color: var(--cream);" data-translate-key="contact_info_phone">+91 9450121054 <br> +91 9838624848</span>
                             </a>
                         </li>
                         <li class="contact-slide-item mail-slide" style="margin-bottom: 15px; display: flex; gap: 15px; align-items: center;">
                             <a href="mailto:aricrooma@gmail.com" style="display: flex; gap: 15px; align-items: center; text-decoration: none; color: inherit; width: 100%;">
                                 <div class="color-icon mail-icon"><i class="fas fa-envelope"></i></div>
-                                <span style="font-size: 1.1rem; color: var(--cream);">aricrooma@gmail.com</span>
+                                <span style="font-size: 1.1rem; color: var(--cream);" data-translate-key="contact_info_email">aricrooma@gmail.com</span>
                             </a>
                         </li>
                     </ul>

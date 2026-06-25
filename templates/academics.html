@@ -2,170 +2,118 @@
 
 {% block content %}
 
-<!-- Hero Section -->
+<!-- Page Banner -->
 <section class="academics-page-banner">
     <div class="container">
-        <h1>शैक्षणिक कार्यक्रम</h1>
-        <p>ज्ञान, संस्कार और उत्कृष्टता की ओर अग्रसर</p>
+        <h1 data-translate-key="academics_page_title">शैक्षणिक कार्यक्रम</h1>
+        <p data-translate-key="academics_page_subtitle">ज्ञान, संस्कार और उत्कृष्टता की ओर अग्रसर</p>
     </div>
 </section>
 
-<!-- Introduction -->
-<section class="academic-intro" style="padding: 60px 5%; background: var(--cream);">
-    <div class="container" style="text-align: center; max-width: 900px;">
-        <h2 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 20px;">हमारी शैक्षणिक व्यवस्था</h2>
-        <p style="font-size: 1.15rem; color: #555; margin-bottom: 15px;">
+<!-- Introduction Module -->
+<section style="padding: 60px 5% 40px;">
+    <div class="container module-content" style="max-width: 950px;">
+        <h2 data-translate-key="our_academic_system_title"><i class="fas fa-university"></i> हमारी शैक्षणिक व्यवस्था</h2>
+        <p data-translate-key="academic_system_p1" style="font-size: 1.15rem;">
             विद्यालय में कक्षा 6 से 12 तक की शिक्षा
             विद्यार्थियों के बौद्धिक, नैतिक, शारीरिक एवं सांस्कृतिक
             विकास को ध्यान में रखते हुए प्रदान की जाती है।
         </p>
-        <p style="font-size: 1.15rem; color: #555;">
+        <p data-translate-key="academic_system_p2" style="font-size: 1.15rem;">
             विद्यालय में आधुनिक शिक्षा के साथ भारतीय संस्कृति,
             राष्ट्रभक्ति एवं चरित्र निर्माण पर विशेष बल दिया जाता है।
         </p>
     </div>
 </section>
 
-<!-- Middle & High School (Cards) -->
+<!-- Middle School Module -->
 <section class="module-with-bg" style="background-image: url('{{ url_for('static', filename='images/school/campus4.png') }}');">
-    <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
-            
-            <!-- Middle School -->
-            <div class="module-content" style="margin: 0; width: 100%;">
-                <h2><i class="fas fa-school"></i> माध्यमिक स्तर (6-8)</h2>
-                <p>इस स्तर पर विद्यार्थियों की मूलभूत शैक्षणिक नींव को मजबूत किया जाता है।</p>
-                <ul class="module-list" style="grid-template-columns: 1fr;">
-                    <li><i class="fas fa-book-reader"></i> हिन्दी एवं अंग्रेज़ी भाषा विकास</li>
-                    <li><i class="fas fa-calculator"></i> गणितीय कौशल विकास</li>
-                    <li><i class="fas fa-flask"></i> विज्ञान की आधारभूत समझ</li>
-                    <li><i class="fas fa-globe-asia"></i> सामाजिक विज्ञान एवं सामान्य ज्ञान</li>
-                    <li><i class="fas fa-om"></i> योग एवं नैतिक शिक्षा</li>
-                    <li><i class="fas fa-laptop"></i> कम्प्यूटर शिक्षा</li>
-                </ul>
-            </div>
+    <div class="module-content">
+        <h2 data-translate-key="middle_school_section_title">माध्यमिक स्तर (6-8)</h2>
+        <p data-translate-key="middle_school_section_desc">इस स्तर पर विद्यार्थियों की मूलभूत शैक्षणिक नींव को मजबूत किया जाता है।</p>
+        <ul class="module-list">
+            <li data-translate-key="middle_subject_1"><i class="fas fa-language"></i> हिन्दी एवं अंग्रेज़ी भाषा विकास</li>
+            <li data-translate-key="middle_subject_2"><i class="fas fa-calculator"></i> गणितीय कौशल विकास</li>
+            <li data-translate-key="middle_subject_3"><i class="fas fa-atom"></i> विज्ञान की आधारभूत समझ</li>
+            <li data-translate-key="middle_subject_4"><i class="fas fa-globe-asia"></i> सामाजिक विज्ञान एवं सामान्य ज्ञान</li>
+            <li data-translate-key="middle_subject_5"><i class="fas fa-om"></i> योग एवं नैतिक शिक्षा</li>
+            <li data-translate-key="middle_subject_6"><i class="fas fa-laptop-code"></i> कम्प्यूटर शिक्षा</li>
+        </ul>
+    </div>
+</section>
 
-            <!-- High School -->
-            <div class="module-content" style="margin: 0; width: 100%;">
-                <h2><i class="fas fa-user-graduate"></i> हाई स्कूल (9-10)</h2>
-                <p>इस स्तर पर विद्यार्थियों को बोर्ड परीक्षा की तैयारी के साथ विषयों की गहन समझ प्रदान की जाती है।</p>
-                <div class="subject-grid" style="margin-top: 20px;">
-                    <div>हिन्दी</div>
-                    <div>अंग्रेज़ी</div>
-                    <div>गणित</div>
-                    <div>विज्ञान</div>
-                    <div>सामाजिक विज्ञान</div>
-                    <div>संस्कृत</div>
-                    <div>कम्प्यूटर</div>
-                </div>
+<!-- High School Module -->
+<section style="padding: 60px 5%;">
+    <div class="module-content" style="border-top-color: var(--secondary);">
+        <h2 data-translate-key="high_school_section_title" style="color: var(--secondary);">हाई स्कूल (9-10)</h2>
+        <p data-translate-key="high_school_section_desc">इस स्तर पर विद्यार्थियों को बोर्ड परीक्षा की तैयारी के साथ विषयों की गहन समझ प्रदान की जाती है।</p>
+        <div class="subject-grid">
+            <div data-translate-key="subject_hindi">हिन्दी</div>
+            <div data-translate-key="subject_english">अंग्रेज़ी</div>
+            <div data-translate-key="subject_math">गणित</div>
+            <div data-translate-key="subject_science">विज्ञान</div>
+            <div data-translate-key="subject_social">सामाजिक विज्ञान</div>
+            <div data-translate-key="subject_sanskrit">संस्कृत</div>
+            <div data-translate-key="subject_computer">कम्प्यूटर</div>
+        </div>
+    </div>
+</section>
+
+<!-- Intermediate Streams -->
+<section style="padding: 40px 5% 60px; background: var(--cream);">
+    <div class="container">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+            <h2 data-translate-key="intermediate_section_title" style="color: var(--primary); font-size: 2.5rem;">इण्टरमीडिएट (कक्षा 11 एवं 12)</h2>
+            <p data-translate-key="intermediate_section_desc" style="font-size: 1.1rem; color: #555;">विद्यार्थियों के उज्ज्वल भविष्य एवं तकनीकी आवश्यकताओं को ध्यान में रखते हुए उत्कृष्ट विज्ञान संकाय उपलब्ध है।</p>
+        </div>
+        <div class="streams-grid">
+            <!-- Science Stream -->
+            <div class="stream-card science-card">
+                <div class="stream-icon"><i class="fas fa-flask"></i></div>
+                <h3 data-translate-key="science_stream_title">विज्ञान संकाय</h3>
+                <p data-translate-key="science_stream_desc" style="margin-bottom: 25px; color: #666;">प्रायोगिक और सैद्धांतिक शिक्षा का अनूठा संगम, जहाँ अनुभवी शिक्षकों द्वारा उत्कृष्ट मार्गदर्शन प्राप्त होता है।</p>
+                <ul class="stream-subjects">
+                    <li data-translate-key="subject_physics"><i class="fas fa-atom"></i> भौतिक विज्ञान</li>
+                    <li data-translate-key="subject_chemistry"><i class="fas fa-vial"></i> रसायन विज्ञान</li>
+                    <li data-translate-key="subject_math_inter"><i class="fas fa-calculator"></i> गणित</li>
+                    <li data-translate-key="subject_biology"><i class="fas fa-dna"></i> जीव विज्ञान</li>
+                    <li data-translate-key="subject_english_inter"><i class="fas fa-language"></i> अंग्रेज़ी</li>
+                    <li data-translate-key="subject_hindi_inter"><i class="fas fa-language"></i> हिन्दी</li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Streams Combinational Section -->
-<section class="streams-section" style="padding: 80px 5%; background: var(--cream);">
+<!-- Methodology & Evaluation -->
+<section style="padding: 60px 5%; background: var(--white);">
     <div class="container">
-        <h2 style="color: var(--primary); text-align: center; margin-bottom: 15px; font-size: 2.8rem;">इण्टरमीडिएट (कक्षा 11 एवं 12)</h2>
-        <p style="text-align: center; font-size: 1.15rem; color: #555; margin-bottom: 50px;">विद्यार्थियों के उज्ज्वल भविष्य एवं तकनीकी आवश्यकताओं को ध्यान में रखते हुए उत्कृष्ट विज्ञान संकाय उपलब्ध है।</p>
-        
-        <style>
-            .premium-horizontal-card {
-                display: flex;
-                align-items: center;
-                gap: 40px;
-                max-width: 900px;
-                margin: 0 auto;
-                text-align: left;
-                padding: 40px;
-            }
-            .premium-horizontal-card .card-left {
-                flex: 1;
-                min-width: 250px;
-                text-align: center;
-                border-right: 2px dashed #ddd;
-                padding-right: 30px;
-            }
-            .premium-horizontal-card .card-right {
-                flex: 2;
-                min-width: 300px;
-            }
-            .premium-horizontal-card .stream-subjects {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-                gap: 15px;
-            }
-            @media(max-width: 768px) {
-                .premium-horizontal-card {
-                    flex-direction: column;
-                    text-align: center;
-                    padding: 30px 20px;
-                }
-                .premium-horizontal-card .card-left {
-                    border-right: none;
-                    border-bottom: 2px dashed #ddd;
-                    padding-right: 0;
-                    padding-bottom: 30px;
-                }
-            }
-        </style>
-
-        <div class="streams-grid" style="display: flex; justify-content: center;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
             
-            <!-- Science -->
-            <div class="stream-card science-card premium-horizontal-card" style="width: 100%;">
-                <div class="card-left">
-                    <div class="stream-icon" style="margin: 0 auto 20px;"><i class="fas fa-atom"></i></div>
-                    <h3 style="margin-bottom: 10px;">विज्ञान संकाय</h3>
-                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">प्रायोगिक और सैद्धांतिक शिक्षा का अनूठा संगम, जहाँ अनुभवी शिक्षकों द्वारा उत्कृष्ट मार्गदर्शन प्राप्त होता है।</p>
-                </div>
-                <div class="card-right">
-                    <ul class="stream-subjects">
-                        <li><i class="fas fa-magnet"></i> भौतिक विज्ञान</li>
-                        <li><i class="fas fa-flask"></i> रसायन विज्ञान</li>
-                        <li><i class="fas fa-square-root-alt"></i> गणित</li>
-                        <li><i class="fas fa-dna"></i> जीव विज्ञान</li>
-                        <li><i class="fas fa-language"></i> अंग्रेज़ी</li>
-                        <li><i class="fas fa-book"></i> हिन्दी</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Methodology & Evaluation & Special Programs -->
-<section class="module-with-bg" style="background-image: url('{{ url_for('static', filename='images/school/campus_coridor.png') }}');">
-    <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-            
-            <!-- Teaching Methodology -->
-            <div class="module-content" style="margin: 0; width: 100%;">
-                <h3><i class="fas fa-chalkboard-teacher"></i> शिक्षण पद्धति</h3>
+            <div>
+                <h2 data-translate-key="methodology_title" style="text-align: left; font-size: 2rem; border-bottom: 3px solid var(--primary); padding-bottom: 10px;">शिक्षण पद्धति</h2>
                 <ul class="module-list" style="grid-template-columns: 1fr;">
-                    <li><i class="fas fa-tv"></i> स्मार्ट कक्षाएँ</li>
-                    <li><i class="fas fa-microscope"></i> प्रयोगात्मक शिक्षा</li>
-                    <li><i class="fas fa-users"></i> समूह चर्चा</li>
-                    <li><i class="fas fa-project-diagram"></i> प्रोजेक्ट आधारित अध्ययन</li>
-                    <li><i class="fas fa-om"></i> योग एवं संस्कार शिक्षा</li>
-                    <li><i class="fas fa-laptop-code"></i> डिजिटल शिक्षण</li>
+                    <li data-translate-key="method_1"><i class="fas fa-chalkboard-teacher"></i> स्मार्ट कक्षाएँ</li>
+                    <li data-translate-key="method_2"><i class="fas fa-microscope"></i> प्रयोगात्मक शिक्षा</li>
+                    <li data-translate-key="method_3"><i class="fas fa-users"></i> समूह चर्चा</li>
+                    <li data-translate-key="method_4"><i class="fas fa-project-diagram"></i> प्रोजेक्ट आधारित अध्ययन</li>
+                    <li data-translate-key="method_5"><i class="fas fa-om"></i> योग एवं संस्कार शिक्षा</li>
+                    <li data-translate-key="method_6"><i class="fas fa-desktop"></i> डिजिटल शिक्षण</li>
                 </ul>
             </div>
 
-            <!-- Examination -->
-            <div class="module-content" style="margin: 0; width: 100%;">
-                <h3><i class="fas fa-clipboard-check"></i> मूल्यांकन प्रणाली</h3>
-                <p style="text-align: left; margin-bottom: 20px;">विद्यार्थियों की प्रगति का नियमित मूल्यांकन मासिक परीक्षा, अर्द्धवार्षिक परीक्षा, वार्षिक परीक्षा एवं सतत आंतरिक मूल्यांकन के माध्यम से किया जाता है।</p>
+            <div>
+                <h2 data-translate-key="evaluation_title" style="text-align: left; font-size: 2rem; border-bottom: 3px solid var(--secondary); padding-bottom: 10px;">मूल्यांकन प्रणाली</h2>
+                <p data-translate-key="evaluation_desc" style="text-align: left; margin-top: 20px; font-size: 1.1rem;">विद्यार्थियों की प्रगति का नियमित मूल्यांकन मासिक परीक्षा, अर्द्धवार्षिक परीक्षा, वार्षिक परीक्षा एवं सतत आंतरिक मूल्यांकन के माध्यम से किया जाता है।</p>
                 
-                <h3 style="margin-top: 30px;"><i class="fas fa-star"></i> विशेष शैक्षणिक कार्यक्रम</h3>
+                <h2 data-translate-key="special_programs_title" style="text-align: left; font-size: 2rem; border-bottom: 3px solid var(--accent); padding-bottom: 10px; margin-top: 30px;">विशेष शैक्षणिक कार्यक्रम</h2>
                 <ul class="module-list" style="grid-template-columns: 1fr;">
-                    <li><i class="fas fa-medal"></i> प्रतिभा विकास कार्यक्रम</li>
-                    <li><i class="fas fa-flask"></i> विज्ञान प्रदर्शनी</li>
-                    <li><i class="fas fa-calculator"></i> गणित कार्यशाला</li>
-                    <li><i class="fas fa-compass"></i> कैरियर मार्गदर्शन सत्र</li>
-                    <li><i class="fas fa-book-open"></i> प्रतियोगी परीक्षा तैयारी</li>
-                    <li><i class="fas fa-hands-helping"></i> संस्कार एवं व्यक्तित्व विकास शिविर</li>
+                    <li data-translate-key="program_1"><i class="fas fa-lightbulb"></i> प्रतिभा विकास कार्यक्रम</li>
+                    <li data-translate-key="program_2"><i class="fas fa-rocket"></i> विज्ञान प्रदर्शनी</li>
+                    <li data-translate-key="program_3"><i class="fas fa-square-root-alt"></i> गणित कार्यशाला</li>
+                    <li data-translate-key="program_4"><i class="fas fa-user-tie"></i> करियर मार्गदर्शन सत्र</li>
+                    <li data-translate-key="program_5"><i class="fas fa-book-reader"></i> प्रतियोगी परीक्षा तैयारी</li>
+                    <li data-translate-key="program_6"><i class="fas fa-hand-holding-heart"></i> संस्कार एवं व्यक्तित्व विकास शिविर</li>
                 </ul>
             </div>
 

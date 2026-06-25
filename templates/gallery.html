@@ -5,8 +5,8 @@
 <!-- Gallery Banner -->
 <section class="gallery-page-banner">
     <div class="container">
-        <h1>विद्यालय गैलरी</h1>
-        <p style="color: var(--gold); font-size: 1.3rem;">हमारी सुखद स्मृतियाँ एवं महत्वपूर्ण उपलब्धियाँ</p>
+        <h1 data-translate-key="gallery_page_title">विद्यालय गैलरी</h1>
+        <p style="color: var(--gold); font-size: 1.3rem;" data-translate-key="gallery_page_subtitle">हमारी सुखद स्मृतियाँ एवं महत्वपूर्ण उपलब्धियाँ</p>
     </div>
 </section>
 
@@ -15,10 +15,10 @@
         
         <!-- Filter Buttons -->
         <div class="gallery-filters">
-            <button class="filter-btn active" data-filter="all">सभी तस्वीरें</button>
-            <button class="filter-btn" data-filter="campus">विद्यालय परिसर</button>
-            <button class="filter-btn" data-filter="events">कार्यक्रम</button>
-            <button class="filter-btn" data-filter="awards">उपलब्धियाँ</button>
+            <button class="filter-btn active" data-filter="all" data-translate-key="filter_all">सभी तस्वीरें</button>
+            <button class="filter-btn" data-filter="campus" data-translate-key="filter_campus">विद्यालय परिसर</button>
+            <button class="filter-btn" data-filter="events" data-translate-key="filter_events">कार्यक्रम</button>
+            <button class="filter-btn" data-filter="awards" data-translate-key="filter_achievements">उपलब्धियाँ</button>
         </div>
 
         <!-- Gallery Grid -->
@@ -29,7 +29,7 @@
                 <img src="{{ url_for('static', filename='images/school/campus4.png') }}" alt="Campus">
                 <div class="gallery-overlay">
                     <i class="fas fa-school"></i>
-                    <h3>विद्यालय परिसर</h3>
+                    <h3 data-translate-key="gallery_img_1_title">विद्यालय परिसर</h3>
                 </div>
             </div>
 
@@ -38,7 +38,7 @@
                 <img src="{{ url_for('static', filename='images/school/campus5.png') }}" alt="Campus">
                 <div class="gallery-overlay">
                     <i class="fas fa-building"></i>
-                    <h3>मुख्य भवन</h3>
+                    <h3 data-translate-key="gallery_img_2_title">मुख्य भवन</h3>
                 </div>
             </div>
 
@@ -47,7 +47,7 @@
                 <img src="{{ url_for('static', filename='images/school/campus_coridor.png') }}" alt="Corridor">
                 <div class="gallery-overlay">
                     <i class="fas fa-archway"></i>
-                    <h3>कॉरिडोर</h3>
+                    <h3 data-translate-key="gallery_img_3_title">कॉरिडोर</h3>
                 </div>
             </div>
 
@@ -56,7 +56,7 @@
                 <img src="{{ url_for('static', filename='images/school/statue12.png') }}" alt="Statue">
                 <div class="gallery-overlay">
                     <i class="fas fa-monument"></i>
-                    <h3>आचार्य जी की प्रतिमा</h3>
+                    <h3 data-translate-key="gallery_img_4_title">आचार्य जी की प्रतिमा</h3>
                 </div>
             </div>
 
@@ -65,7 +65,7 @@
                 <img src="{{ url_for('static', filename='images/school/statue2.png') }}" alt="Statue 2">
                 <div class="gallery-overlay">
                     <i class="fas fa-leaf"></i>
-                    <h3>सांस्कृतिक धरोहर</h3>
+                    <h3 data-translate-key="gallery_img_5_title">सांस्कृतिक धरोहर</h3>
                 </div>
             </div>
             
@@ -74,7 +74,7 @@
                 <img src="{{ url_for('static', filename='images/school/campus_karyalay.png') }}" alt="Office">
                 <div class="gallery-overlay">
                     <i class="fas fa-user-tie"></i>
-                    <h3>कार्यालय</h3>
+                    <h3 data-translate-key="gallery_img_6_title">कार्यालय</h3>
                 </div>
             </div>
 

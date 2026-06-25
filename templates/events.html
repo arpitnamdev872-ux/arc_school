@@ -3,66 +3,69 @@
 {% block content %}
 
 <!-- Page Banner -->
-<section class="page-banner" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ url_for('static', filename='images/school/campus5.png') }}') center/cover no-repeat;">
+<section class="page-banner" style="background: linear-gradient(135deg, rgba(183, 28, 28, 0.9), rgba(244, 180, 0, 0.8)), url('{{ url_for('static', filename='images/school/campus_coridor.png') }}') center/cover fixed;">
     <div class="container">
-        <h1 style="color: white;">आगामी कार्यक्रम</h1>
-        <p style="color: var(--gold); font-size: 1.3rem;">विद्यालय के महत्वपूर्ण आयोजन एवं गतिविधियाँ</p>
+        <h1 data-translate-key="events_page_title">आगामी कार्यक्रम</h1>
+        <p data-translate-key="events_page_subtitle">विद्यालय के महत्वपूर्ण आयोजन एवं गतिविधियाँ</p>
     </div>
 </section>
 
-<section class="events-page">
-    <div class="container" style="max-width: 900px;">
+<!-- Events Grid Section -->
+<section class="events-page" style="padding: 80px 5%;">
+    <div class="container">
+        <div class="events-grid" style="display: grid; grid-template-columns: 1fr; gap: 40px;">
 
-        <!-- Event 1 -->
-        <div class="event-card">
-            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=600&auto=format&fit=crop" alt="अंतर्राष्ट्रीय योग दिवस">
-            <div class="event-content">
-                <span class="event-date">21 जून 2026</span>
-                <h2>अंतर्राष्ट्रीय योग दिवस</h2>
-                <p>विद्यालय परिसर में सभी विद्यार्थियों एवं शिक्षकों के लिए सामूहिक योग एवं प्राणायाम सत्र का आयोजन किया जाएगा।</p>
+            <!-- Event 1: Yoga Day -->
+            <div class="event-card">
+                <img src="{{ url_for('static', filename='images/events/yogaday.png') }}" alt="अंतर्राष्ट्रीय योग दिवस">
+                <div class="event-content">
+                    <span class="event-date" data-translate-key="event_1_page_date">21 जून 2026</span>
+                    <h2 data-translate-key="event_1_page_title">अंतर्राष्ट्रीय योग दिवस</h2>
+                    <p data-translate-key="event_1_page_desc">विद्यालय परिसर में सभी विद्यार्थियों एवं शिक्षकों के लिए सामूहिक योग एवं प्राणायाम सत्र का आयोजन किया जाएगा।</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Event 2 -->
-        <div class="event-card">
-            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=600&auto=format&fit=crop" alt="वृक्षारोपण अभियान">
-            <div class="event-content">
-                <span class="event-date">05 जुलाई 2026</span>
-                <h2>वृक्षारोपण अभियान</h2>
-                <p>पर्यावरण संरक्षण के प्रति जागरूकता बढ़ाने के लिए विद्यालय परिसर एवं आसपास के क्षेत्रों में छात्रों द्वारा वृक्षारोपण किया जाएगा।</p>
+            <!-- Event 2: Plantation Drive -->
+            <div class="event-card">
+                <img src="{{ url_for('static', filename='images/events/plantation.png') }}" alt="वृक्षारोपण अभियान">
+                <div class="event-content">
+                    <span class="event-date" data-translate-key="event_2_page_date">05 जुलाई 2026</span>
+                    <h2 data-translate-key="event_2_page_title">वृक्षारोपण अभियान</h2>
+                    <p data-translate-key="event_2_page_desc">पर्यावरण संरक्षण के प्रति जागरूकता बढ़ाने के लिए विद्यालय परिसर एवं आसपास के क्षेत्रों में छात्रों द्वारा वृक्षारोपण किया जाएगा।</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Event 3 -->
-        <div class="event-card">
-            <img src="https://www.nationalheraldindia.com/india/memories-of-republic-day-laddus-school-competitions-jhankis" alt="स्वतंत्रता दिवस">
-            <div class="event-content">
-                <span class="event-date">15 अगस्त 2026</span>
-                <h2>स्वतंत्रता दिवस समारोह</h2>
-                <p>ध्वजारोहण, परेड एवं देशभक्ति से ओत-प्रोत सांस्कृतिक कार्यक्रमों का आयोजन।</p>
+            <!-- Event 3: Independence Day -->
+            <div class="event-card">
+                <img src="{{ url_for('static', filename='images/events/independence day.png') }}" alt="स्वतंत्रता दिवस">
+                <div class="event-content">
+                    <span class="event-date" data-translate-key="event_3_page_date">15 अगस्त 2026</span>
+                    <h2 data-translate-key="event_3_page_title">स्वतंत्रता दिवस समारोह</h2>
+                    <p data-translate-key="event_3_page_desc">ध्वजारोहण, परेड एवं देशभक्ति से ओत-प्रोत सांस्कृतिक कार्यक्रमों का आयोजन।</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Event 4 -->
-        <div class="event-card">
-            <img src="https://images.unsplash.com/photo-1554475901-4538ddfbccc2?q=80&w=600&auto=format&fit=crop" alt="विज्ञान प्रदर्शनी">
-            <div class="event-content">
-                <span class="event-date">20 अगस्त 2026</span>
-                <h2>विज्ञान प्रदर्शनी</h2>
-                <p>छात्रों द्वारा बनाए गए विज्ञान मॉडलों और नवाचारों का प्रदर्शन। सर्वश्रेष्ठ मॉडलों को पुरस्कृत किया जाएगा।</p>
+            <!-- Event 4: Science Exhibition -->
+            <div class="event-card">
+                <img src="{{ url_for('static', filename='images/events/exhibition.png') }}" alt="विज्ञान प्रदर्शनी">
+                <div class="event-content">
+                    <span class="event-date" data-translate-key="event_4_page_date">20 अगस्त 2026</span>
+                    <h2 data-translate-key="event_4_page_title">विज्ञान प्रदर्शनी</h2>
+                    <p data-translate-key="event_4_page_desc">छात्रों द्वारा बनाए गए विज्ञान मॉडलों और नवाचारों का प्रदर्शन। सर्वश्रेष्ठ मॉडलों को पुरस्कृत किया जाएगा।</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Event 5 -->
-        <div class="event-card">
-            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=600&auto=format&fit=crop" alt="शिक्षक दिवस">
-            <div class="event-content">
-                <span class="event-date">05 सितंबर 2026</span>
-                <h2>शिक्षक दिवस</h2>
-                <p>शिक्षकों के सम्मान में छात्रों द्वारा विशेष कार्यक्रम और गतिविधियाँ आयोजित की जाएंगी।</p>
+            <!-- Event 5: Teachers' Day -->
+            <div class="event-card">
+                <img src="{{ url_for('static', filename='images/events/teachers.jpg') }}" alt="शिक्षक दिवस">
+                <div class="event-content">
+                    <span class="event-date" data-translate-key="event_5_page_date">05 सितंबर 2026</span>
+                    <h2 data-translate-key="event_5_page_title">शिक्षक दिवस</h2>
+                    <p data-translate-key="event_5_page_desc">शिक्षकों के सम्मान में छात्रों द्वारा विशेष कार्यक्रम और गतिविधियाँ आयोजित की जाएंगी।</p>
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
 </section>
 

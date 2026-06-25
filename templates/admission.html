@@ -1,119 +1,105 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- Page Banner -->
+<section class="academics-page-banner" style="background: linear-gradient(135deg, rgba(183, 28, 28, 0.9), rgba(244, 180, 0, 0.8)), url('{{ url_for('static', filename='images/school/campus_karyalay.png') }}') center/cover fixed;">
+    <div class="container">
+        <h1 data-translate-key="admission_page_title">प्रवेश प्रक्रिया</h1>
+        <p data-translate-key="admission_page_subtitle">सत्र 2026-27 के लिए प्रवेश प्रारंभ</p>
+    </div>
+</section>
 
-    <!-- Page Banner -->
-    <section class="page-banner" style="background: linear-gradient(135deg, rgba(183, 28, 28, 0.85), rgba(244, 180, 0, 0.8)), url('{{ url_for('static', filename='images/school/campus5.png') }}') center/cover no-repeat; padding-top: 180px; padding-bottom: 80px; margin-top: -90px;">
-        <div class="container">
-            <h1 style="color: white; font-size: 3.5rem; margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3);">प्रवेश प्रक्रिया</h1>
-            <p style="color: var(--cream); font-size: 1.3rem; font-weight: 600;">सत्र 2026-27 के लिए प्रवेश प्रारंभ</p>
+<!-- Admission Process Section -->
+<section style="padding: 60px 5%;">
+    <div class="container">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
+            <h2 data-translate-key="admission_rules_title" style="color: var(--primary); font-size: 2.5rem;">प्रवेश के नियम एवं प्रक्रिया</h2>
+            <p data-translate-key="admission_rules_desc" style="font-size: 1.1rem; color: #555;">आचार्य रघुवीर इण्टर कॉलेज में प्रवेश मेरिट और प्रवेश परीक्षा के आधार पर दिया जाता है। हम प्रत्येक विद्यार्थी के सर्वांगीण विकास के लिए प्रतिबद्ध हैं।</p>
         </div>
-    </section>
 
-    <!-- Admission Info Section -->
-    <section style="padding: 80px 5%; background: var(--cream);">
-        <div class="container">
-            <div class="admission-wrapper">
-                
-                <!-- Left: Process & Rules -->
-                <div class="admission-info">
-                    <h2 style="color: var(--primary); font-size: 2.2rem; margin-bottom: 20px;"><i class="fas fa-info-circle"></i> प्रवेश के नियम एवं प्रक्रिया</h2>
-                    <p style="font-size: 1.1rem; color: #555; line-height: 1.8; margin-bottom: 30px;">
-                        आचार्य रघुवीर इण्टर कॉलेज में प्रवेश मेरिट और प्रवेश परीक्षा के आधार पर दिया जाता है। हम प्रत्येक विद्यार्थी के सर्वांगीण विकास के लिए प्रतिबद्ध हैं।
-                    </p>
-
-                    <div class="process-steps" style="margin-bottom: 40px;">
-                        <div class="step" style="display: flex; gap: 15px; margin-bottom: 20px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 4px solid var(--primary);">
-                            <div class="step-icon" style="background: var(--primary); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold; font-size: 1.2rem; flex-shrink: 0;">1</div>
-                            <div>
-                                <h3 style="color: var(--dark); margin-bottom: 5px; font-size: 1.2rem;">पंजीकरण (Registration)</h3>
-                                <p style="color: #666; font-size: 0.95rem;">विद्यालय कार्यालय से पंजीकरण फॉर्म प्राप्त करें या ऑनलाइन फॉर्म भरें।</p>
-                            </div>
-                        </div>
-
-                        <div class="step" style="display: flex; gap: 15px; margin-bottom: 20px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 4px solid var(--secondary);">
-                            <div class="step-icon" style="background: var(--secondary); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold; font-size: 1.2rem; flex-shrink: 0;">2</div>
-                            <div>
-                                <h3 style="color: var(--dark); margin-bottom: 5px; font-size: 1.2rem;">प्रवेश परीक्षा / साक्षात्कार</h3>
-                                <p style="color: #666; font-size: 0.95rem;">कक्षा 6 से ऊपर के विद्यार्थियों के लिए एक सामान्य प्रवेश परीक्षा आयोजित की जाएगी।</p>
-                            </div>
-                        </div>
-
-                        <div class="step" style="display: flex; gap: 15px; margin-bottom: 20px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 4px solid var(--accent);">
-                            <div class="step-icon" style="background: var(--accent); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold; font-size: 1.2rem; flex-shrink: 0;">3</div>
-                            <div>
-                                <h3 style="color: var(--dark); margin-bottom: 5px; font-size: 1.2rem;">दस्तावेज़ सत्यापन</h3>
-                                <p style="color: #666; font-size: 0.95rem;">चयनित विद्यार्थियों को आवश्यक दस्तावेज़ कार्यालय में जमा करने होंगे।</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 15px;"><i class="fas fa-file-alt"></i> आवश्यक दस्तावेज़</h3>
-                    <ul style="list-style: none; padding: 0; color: #555; font-size: 1.05rem;">
-                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> पिछली कक्षा की मार्कशीट (अंक पत्र)</li>
-                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> स्थानांतरण प्रमाण पत्र (Transfer Certificate)</li>
-                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> विद्यार्थी एवं अभिभावक का आधार कार्ड</li>
-                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> 4 पासपोर्ट साइज रंगीन फोटो</li>
-                    </ul>
-                </div>
-
-                <!-- Right: Admission Form -->
-                <div class="admission-form-container card" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-top: 6px solid var(--primary);">
-                    <h2 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 10px; text-align: center;">ऑनलाइन प्रवेश पूछताछ</h2>
-                    <p style="color: #666; text-align: center; margin-bottom: 30px; font-size: 0.95rem;">प्रवेश से जुड़ी जानकारी के लिए नीचे दिया गया फॉर्म भरें। हमारी टीम जल्द ही आपसे संपर्क करेगी।</p>
-
-                    <form action="#" method="POST">
-                        <div class="form-group" style="margin-bottom: 20px;">
-                            <label style="font-weight: 600; color: var(--dark); display: block; margin-bottom: 8px;">विद्यार्थी का नाम <span style="color: red;">*</span></label>
-                            <input type="text" name="student_name" placeholder="पूरा नाम दर्ज करें" required style="width: 100%; padding: 12px 15px; border: 2px solid #eee; border-radius: 8px; font-family: inherit; transition: 0.3s;" class="custom-input">
-                        </div>
-
-                        <div class="form-row" style="display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
-                            <div class="form-group" style="flex: 1; min-width: 150px;">
-                                <label style="font-weight: 600; color: var(--dark); display: block; margin-bottom: 8px;">अभिभावक का नाम <span style="color: red;">*</span></label>
-                                <input type="text" name="parent_name" placeholder="अभिभावक का नाम" required style="width: 100%; padding: 12px 15px; border: 2px solid #eee; border-radius: 8px; font-family: inherit; transition: 0.3s;" class="custom-input">
-                            </div>
-                            <div class="form-group" style="flex: 1; min-width: 150px;">
-                                <label style="font-weight: 600; color: var(--dark); display: block; margin-bottom: 8px;">मोबाइल नंबर <span style="color: red;">*</span></label>
-                                <input type="tel" name="mobile" placeholder="10 अंकों का नंबर" required style="width: 100%; padding: 12px 15px; border: 2px solid #eee; border-radius: 8px; font-family: inherit; transition: 0.3s;" class="custom-input">
-                            </div>
-                        </div>
-
-                        <div class="form-row" style="display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
-                            <div class="form-group" style="flex: 1; min-width: 150px;">
-                                <label style="font-weight: 600; color: var(--dark); display: block; margin-bottom: 8px;">प्रवेश हेतु कक्षा <span style="color: red;">*</span></label>
-                                <select name="class" required style="width: 100%; padding: 12px 15px; border: 2px solid #eee; border-radius: 8px; font-family: inherit; transition: 0.3s;" class="custom-input">
-                                    <option value="">कक्षा चुनें</option>
-                                    <option>कक्षा 6</option>
-                                    <option>कक्षा 7</option>
-                                    <option>कक्षा 8</option>
-                                    <option>कक्षा 9</option>
-                                    <option>कक्षा 10</option>
-                                    <option>कक्षा 11 (विज्ञान)</option>
-                                    <option>कक्षा 11 (वाणिज्य)</option>
-                                    <option>कक्षा 11 (कला)</option>
-                                    <option>कक्षा 12 (विज्ञान)</option>
-                                    <option>कक्षा 12 (वाणिज्य)</option>
-                                    <option>कक्षा 12 (कला)</option>
-                                </select>
-                            </div>
-                            <div class="form-group" style="flex: 1; min-width: 150px;">
-                                <label style="font-weight: 600; color: var(--dark); display: block; margin-bottom: 8px;">पिछला विद्यालय</label>
-                                <input type="text" name="prev_school" placeholder="विद्यालय का नाम (वैकल्पिक)" style="width: 100%; padding: 12px 15px; border: 2px solid #eee; border-radius: 8px; font-family: inherit; transition: 0.3s;" class="custom-input">
-                            </div>
-                        </div>
-
-                        <div class="form-group" style="margin-bottom: 25px;">
-                            <label style="font-weight: 600; color: var(--dark); display: block; margin-bottom: 8px;">पूछताछ / संदेश</label>
-                            <textarea name="message" rows="4" placeholder="अपनी कोई विशेष पूछताछ यहाँ लिखें..." style="width: 100%; padding: 12px 15px; border: 2px solid #eee; border-radius: 8px; font-family: inherit; transition: 0.3s; resize: none;" class="custom-input"></textarea>
-                        </div>
-
-                        <button type="button" onclick="alert('आपकी पूछताछ सफलतापूर्वक सबमिट हो गई है। हमारी टीम जल्द ही आपसे संपर्क करेगी।')" class="erp-btn" style="width: 100%; font-size: 1.1rem; padding: 15px; border-radius: 8px; text-align: center;">सबमिट करें <i class="fas fa-paper-plane" style="margin-left: 5px;"></i></button>
-                    </form>
-                </div>
-
+        <!-- Steps -->
+        <div class="admission-steps">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3 data-translate-key="step1_title">पंजीकरण (Registration)</h3>
+                <p data-translate-key="step1_desc">विद्यालय कार्यालय से पंजीकरण फॉर्म प्राप्त करें या ऑनलाइन फॉर्म भरें।</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3 data-translate-key="step2_title">प्रवेश परीक्षा / साक्षात्कार</h3>
+                <p data-translate-key="step2_desc">कक्षा 6 से ऊपर के विद्यार्थियों के लिए एक सामान्य प्रवेश परीक्षा आयोजित की जाएगी।</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3 data-translate-key="step3_title">दस्तावेज़ सत्यापन</h3>
+                <p data-translate-key="step3_desc">चयनित विद्यार्थियों को आवश्यक दस्तावेज़ कार्यालय में जमा करने होंगे।</p>
             </div>
         </div>
-    </section>
 
+        <!-- Required Documents -->
+        <div class="module-content" style="margin-top: 50px; border-top-color: var(--secondary);">
+            <h2 data-translate-key="required_docs_title" style="color: var(--secondary);"><i class="fas fa-file-alt"></i> आवश्यक दस्तावेज़</h2>
+            <ul class="module-list" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <li data-translate-key="doc_1"><i class="fas fa-award"></i> पिछली कक्षा की मार्कशीट (अंक पत्र)</li>
+                <li data-translate-key="doc_2"><i class="fas fa-certificate"></i> स्थानांतरण प्रमाण पत्र (Transfer Certificate)</li>
+                <li data-translate-key="doc_3"><i class="fas fa-id-card"></i> विद्यार्थी एवं अभिभावक का आधार कार्ड</li>
+                <li data-translate-key="doc_4"><i class="fas fa-camera"></i> 4 पासपोर्ट साइज रंगीन फोटो</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Admission Inquiry Form -->
+<section style="padding: 60px 5%; background: var(--cream);">
+    <div class="container">
+        <div class="admission-wrapper">
+            <!-- Form -->
+            <div class="complaint-form-box card" style="grid-column: span 2;">
+                <h2 data-translate-key="inquiry_form_title" style="text-align: center; color: var(--primary); font-size: 2.2rem;">ऑनलाइन प्रवेश पूछताछ</h2>
+                <p data-translate-key="inquiry_form_desc" style="text-align: center; color: #555; margin-bottom: 30px;">प्रवेश से जुड़ी जानकारी के लिए नीचे दिया गया फॉर्म भरें। हमारी टीम जल्द ही आपसे संपर्क करेगी।</p>
+
+                <form method="POST" action="/admission-inquiry">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-translate-key="label_student_name_adm">विद्यार्थी का नाम *</label>
+                            <input type="text" name="student_name" required class="custom-input" data-translate-placeholder="placeholder_student_name_adm">
+                        </div>
+                        <div class="form-group">
+                            <label data-translate-key="label_parent_name_adm">अभिभावक का नाम *</label>
+                            <input type="text" name="parent_name" required class="custom-input" data-translate-placeholder="placeholder_parent_name_adm">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-translate-key="label_mobile_adm">मोबाइल नंबर *</label>
+                            <input type="tel" name="mobile" required class="custom-input" data-translate-placeholder="placeholder_mobile_adm">
+                        </div>
+                        <div class="form-group">
+                            <label data-translate-key="label_class_adm">प्रवेश हेतु कक्षा *</label>
+                            <select name="class" required class="custom-input">
+                                <option value="" data-translate-key="select_class_adm">कक्षा चुनें</option>
+                                <option data-translate-key="class_6">कक्षा 6</option>
+                                <option data-translate-key="class_7">कक्षा 7</option>
+                                <option data-translate-key="class_8">कक्षा 8</option>
+                                <option data-translate-key="class_9">कक्षा 9</option>
+                                <option data-translate-key="class_10">कक्षा 10</option>
+                                <option data-translate-key="class_11">कक्षा 11</option>
+                                <option data-translate-key="class_12">कक्षा 12</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate-key="label_prev_school_adm">पिछला विद्यालय</label>
+                        <input type="text" name="previous_school" class="custom-input" data-translate-placeholder="placeholder_prev_school_adm">
+                    </div>
+                    <div class="form-group">
+                        <label data-translate-key="label_message_adm">पूछताछ / संदेश</label>
+                        <textarea name="message" rows="4" class="custom-input" data-translate-placeholder="placeholder_message_adm"></textarea>
+                    </div>
+                    <button type="submit" class="erp-btn" style="width: 100%; text-align: center; border-radius: 10px;" data-translate-key="btn_submit_adm"><i class="fas fa-paper-plane"></i> सबमिट करें</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
